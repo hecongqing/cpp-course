@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment · C++ Programming</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --red: #8c1515;
+        --red-dark: #651010;
+        --ink: #242424;
+        --muted: #666;
+        --line: #d8d8d8;
+        --paper: #fff;
+        --canvas: #f5f3ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--canvas);
+        font-family: Arial, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.65;
+      }
+
+      header {
+        padding: 18px max(24px, calc((100% - 860px) / 2));
+        color: #fff;
+        background: var(--red);
+      }
+
+      header strong {
+        font-family: Georgia, "Times New Roman", "Songti SC", serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      main {
+        width: min(100% - 36px, 860px);
+        margin: 48px auto;
+        padding: 42px 46px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", "Songti SC", serif;
+        font-size: clamp(30px, 5vw, 46px);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .zh-title {
+        margin: 9px 0 26px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .status {
+        margin: 0 0 26px;
+        padding: 16px 18px;
+        border-left: 4px solid var(--red);
+        background: #fbf5f5;
+      }
+
+      .status strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      h2 {
+        margin: 30px 0 8px;
+        font-family: Georgia, "Times New Roman", "Songti SC", serif;
+        font-size: 21px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: var(--red);
+        text-underline-offset: 3px;
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--red-dark);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 34px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          margin: 24px auto;
+          padding: 30px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><strong>C++ Programming</strong></header>
+    <main>
+      <p class="eyebrow" id="week-label">Course material · Week</p>
+      <h1 id="resource-title">Course Material</h1>
+      <p class="zh-title" id="resource-title-zh">课程材料</p>
+
+      <div class="status">
+        <strong>Coming soon...</strong>
+        <span id="status-en">This course material has not been uploaded yet. Please check back later.</span><br />
+        <span id="status-zh">该课程材料暂未上传，请稍后查看。</span>
+      </div>
+
+      <a class="back-link" href="../../index.html#schedule">← Back to Schedule / 返回课程安排</a>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const week = params.get("week") || "01";
+      const weekNumber = Number(week) || 1;
+      const requestedKind = params.get("kind") || "assignment";
+      const kind = ["slides", "code", "assignment"].includes(requestedKind) ? requestedKind : "assignment";
+      const resources = {
+        slides: {
+          en: "Slides",
+          zh: "课件",
+          statusEn: "The slides have not been uploaded yet. Please check back later.",
+          statusZh: "课件暂未上传，请稍后查看。"
+        },
+        code: {
+          en: "Code",
+          zh: "代码",
+          statusEn: "The code has not been uploaded yet. Please check back later.",
+          statusZh: "代码暂未上传，请稍后查看。"
+        },
+        assignment: {
+          en: "Assignment",
+          zh: "作业",
+          statusEn: "The assignment document has not been uploaded yet. Please check back later.",
+          statusZh: "作业文档暂未上传，请稍后查看。"
+        }
+      };
+      const resource = resources[kind];
+
+      document.getElementById("week-label").textContent = `${resource.en} · Week ${weekNumber}`;
+      document.getElementById("resource-title").textContent = `Week ${weekNumber} ${resource.en}`;
+      document.getElementById("resource-title-zh").textContent = `第${weekNumber}周${resource.zh}`;
+      document.getElementById("status-en").textContent = resource.statusEn;
+      document.getElementById("status-zh").textContent = resource.statusZh;
+      document.title = `Week ${weekNumber} ${resource.en} · C++ Programming`;
+    </script>
+  </body>
+</html>

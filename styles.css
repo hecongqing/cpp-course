@@ -1,0 +1,1010 @@
+:root {
+  --stanford-red: #b1042c;
+  --stanford-red-dark: #870024;
+  --ink: #202124;
+  --muted: #666a70;
+  --line: #dedede;
+  --paper: #ffffff;
+  --soft: #f6f5f3;
+  --theory: #2563a6;
+  --theory-soft: #eaf2fb;
+  --mixed: #5c6f2b;
+  --mixed-soft: #f2f6e8;
+  --lab: #a23b16;
+  --lab-soft: #fff0e8;
+  --sidebar-width: 324px;
+  --shadow: 0 18px 42px rgba(30, 30, 30, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Avenir Next", Avenir, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 14px;
+  color: #fff;
+  background: #111;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.course-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 20;
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  padding: 46px 32px 34px;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(135, 0, 36, 0.08), rgba(135, 0, 36, 0.3)),
+    var(--stanford-red);
+  box-shadow: 8px 0 28px rgba(37, 20, 24, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-block {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.course-code {
+  display: inline-block;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  text-decoration: none;
+}
+
+.course-name {
+  margin: 7px 0 25px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 21px;
+  letter-spacing: 0.01em;
+}
+
+.course-meta,
+.course-term {
+  margin: 0;
+}
+
+.course-meta {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.course-term {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 3px;
+  margin-top: 26px;
+}
+
+.sidebar-nav a {
+  position: relative;
+  padding: 10px 12px 10px 17px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.sidebar-nav a::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  content: "";
+  background: #fff;
+  transform: translateY(-50%);
+  transition: height 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus-visible,
+.sidebar-nav a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav a.active::before {
+  height: 22px;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.sidebar-note .note-icon {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.sidebar-note p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.page-shell {
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  height: 78px;
+  padding: 0 clamp(28px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.topbar-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.topbar-title .eyebrow {
+  color: var(--stanford-red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.topbar-title strong {
+  font-size: 18px;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 39px;
+  padding: 3px;
+  border: 1px solid #d3d3d3;
+  border-radius: 999px;
+  background: #f5f5f5;
+}
+
+.language-icon {
+  margin: 0 5px 0 8px;
+  color: var(--stanford-red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.language-option {
+  height: 31px;
+  min-width: 46px;
+  padding: 0 10px;
+  color: #616161;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-option:hover,
+.language-option:focus-visible {
+  color: var(--stanford-red);
+}
+
+.language-option.active {
+  color: #fff;
+  background: var(--stanford-red);
+  box-shadow: 0 2px 6px rgba(120, 0, 30, 0.22);
+}
+
+.content-wrap {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 68px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.75fr);
+  gap: clamp(42px, 6vw, 82px);
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading.compact {
+  margin-bottom: 22px;
+}
+
+.section-kicker {
+  margin: 0 0 5px;
+  color: var(--stanford-red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  color: #1d1d1f;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(36px, 4.4vw, 57px);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.intro-copy {
+  max-width: 760px;
+}
+
+.intro-copy p {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 7px;
+  margin: 0 0 19px;
+  color: #363636;
+  font-size: 17px;
+}
+
+.course-info-card {
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid #d8d8d8;
+  border-top: 4px solid var(--stanford-red);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.course-info-card h2 {
+  padding: 21px 23px 16px;
+  font-family: inherit;
+  font-size: 21px;
+  border-bottom: 1px solid var(--line);
+}
+
+.instructor-details {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 5px 23px 14px;
+  list-style: none;
+}
+
+.instructor-details li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  padding: 13px 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 14px;
+}
+
+.instructor-details li:last-child {
+  border-bottom: 0;
+}
+
+.instructor-details a {
+  color: var(--stanford-red);
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+.instructor-details a:hover,
+.instructor-details a:focus-visible {
+  color: var(--stanford-red-dark);
+}
+
+.schedule-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #d7d7d7;
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 15px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.schedule-table th:last-child,
+.schedule-table td:last-child {
+  border-right: 0;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.schedule-table th {
+  color: #303030;
+  background: #f6f6f6;
+  font-size: 12px;
+  letter-spacing: 0.035em;
+}
+
+.schedule-table th:nth-child(1) {
+  width: 64px;
+}
+
+.schedule-table th:nth-child(2) {
+  width: 90px;
+}
+
+.schedule-table th:nth-child(3) {
+  width: 24%;
+}
+
+.schedule-table th:nth-child(4) {
+  width: 140px;
+}
+
+.schedule-table th:nth-child(5) {
+  width: auto;
+}
+
+.schedule-table td {
+  color: #464646;
+  font-size: 14px;
+}
+
+.schedule-table td strong {
+  display: block;
+  color: #202020;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.schedule-table td p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lecture-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  margin-top: 0;
+}
+
+.schedule-table td:nth-child(5) {
+  color: #383838;
+}
+
+.assignment-document {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 0;
+  color: var(--stanford-red);
+  font-size: 13px;
+  line-height: 1.55;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.assignment-document:hover,
+.assignment-document:focus-visible {
+  color: var(--stanford-red-dark);
+}
+
+.lecture-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--stanford-red);
+  font-size: 13px;
+  line-height: 1.55;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.lecture-links a:hover,
+.lecture-links a:focus-visible {
+  color: var(--stanford-red-dark);
+}
+
+.week-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.mode-badge {
+  display: inline-block;
+  min-width: 65px;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.mode-badge.theory {
+  color: var(--theory);
+  background: var(--theory-soft);
+}
+
+.mode-badge.mixed {
+  color: var(--mixed);
+  background: var(--mixed-soft);
+}
+
+.mode-badge.lab {
+  color: var(--lab);
+  background: var(--lab-soft);
+}
+
+.mixed-row td:first-child {
+  box-shadow: inset 4px 0 0 var(--mixed);
+}
+
+.mixed-row {
+  background: #fdfef9;
+}
+
+.lab-row td:first-child {
+  box-shadow: inset 4px 0 0 var(--lab);
+}
+
+.lab-row {
+  background: #fffdfa;
+}
+
+.cycle-end td {
+  border-bottom: 3px solid #d9d6d1;
+}
+
+.schedule-note {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 15px 18px;
+  color: #4b4b4b;
+  background: var(--soft);
+  border-left: 4px solid var(--mixed);
+  font-size: 14px;
+}
+
+.schedule-note strong {
+  flex: 0 0 auto;
+  color: #232323;
+}
+
+.learning-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.learning-flow article {
+  min-height: 164px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.learning-flow article > span {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  color: #fff;
+  background: var(--stanford-red);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.learning-flow h3 {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+.learning-flow p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.learning-flow > i {
+  color: #aaa;
+  font-style: normal;
+}
+
+.support-note {
+  display: flex;
+  gap: 13px;
+  margin-top: 24px;
+  padding: 18px 21px;
+  background: var(--soft);
+  border-left: 4px solid var(--stanford-red);
+}
+
+.support-note p {
+  margin: 0;
+  color: #444;
+}
+
+.grading-content {
+  max-width: 780px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.grading-content > p {
+  margin: 0 0 18px;
+}
+
+.grading-content h3 {
+  margin: 30px 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+.grading-breakdown {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.grading-breakdown li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resources-section {
+  border-bottom: 0;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.resource-grid article {
+  min-height: 210px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--stanford-red);
+  background: #fff;
+}
+
+.resource-tag {
+  display: inline-block;
+  padding: 3px 7px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.resource-tag.primary {
+  color: #8c0628;
+  background: #fae8ed;
+}
+
+.resource-tag.local {
+  color: #225b8e;
+  background: #e8f2fa;
+}
+
+.resource-tag.modern {
+  color: #78551c;
+  background: #faf0d9;
+}
+
+.resource-tag.tool {
+  color: #286248;
+  background: #e7f4ed;
+}
+
+.resource-grid h3 {
+  margin-top: 21px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 19px;
+}
+
+.resource-grid p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  color: var(--stanford-red);
+  font-size: 14px;
+  font-weight: 750;
+  text-underline-offset: 3px;
+}
+
+.resource-link:hover,
+.resource-link:focus-visible {
+  color: var(--stanford-red-dark);
+}
+
+.scope-note {
+  margin-top: 22px;
+  padding: 18px 21px;
+  color: #4f4f4f;
+  background: var(--soft);
+  font-size: 14px;
+}
+
+.scope-note strong {
+  color: #222;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px clamp(28px, 5vw, 72px);
+  color: rgba(255, 255, 255, 0.76);
+  background: #252525;
+  font-size: 13px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid #f2b41b;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --sidebar-width: 276px;
+  }
+
+  .course-sidebar {
+    padding-inline: 26px;
+  }
+
+  .learning-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learning-flow > i {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .course-sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    padding: 30px clamp(22px, 6vw, 48px);
+    box-shadow: none;
+  }
+
+  .brand-block {
+    padding-bottom: 18px;
+  }
+
+  .course-code {
+    font-size: 38px;
+  }
+
+  .course-name {
+    margin-bottom: 15px;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(5, auto);
+    overflow-x: auto;
+    margin-top: 16px;
+    padding-bottom: 4px;
+  }
+
+  .sidebar-nav a {
+    white-space: nowrap;
+  }
+
+  .sidebar-note {
+    display: none;
+  }
+
+  .page-shell {
+    margin-left: 0;
+  }
+
+  .topbar-title .eyebrow {
+    display: none;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-info-card {
+    width: min(100%, 470px);
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+
+  .topbar {
+    height: 68px;
+    padding-inline: 18px;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow-x: visible;
+    gap: 5px;
+  }
+
+  .sidebar-nav a {
+    padding-inline: 12px;
+    text-align: center;
+  }
+
+  .topbar-title strong {
+    font-size: 15px;
+  }
+
+  .language-icon {
+    display: none;
+  }
+
+  .language-switch {
+    height: 37px;
+  }
+
+  .language-option {
+    min-width: 43px;
+    padding-inline: 8px;
+  }
+
+  .content-wrap {
+    width: min(100% - 36px, 1180px);
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .intro-copy p {
+    font-size: 15px;
+  }
+
+  .schedule-table-wrap {
+    overflow: visible;
+    border: 0;
+  }
+
+  .schedule-table,
+  .schedule-table tbody,
+  .schedule-table tr,
+  .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table {
+    min-width: 0;
+  }
+
+  .schedule-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .schedule-table tr {
+    margin-bottom: 14px;
+    padding: 15px 16px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--theory);
+    background: #fff;
+  }
+
+  .schedule-table tr.lab-row {
+    border-left-color: var(--lab);
+    background: #fffdfa;
+  }
+
+  .schedule-table tr.mixed-row {
+    border-left-color: var(--mixed);
+    background: #fdfef9;
+  }
+
+  .schedule-table th,
+  .schedule-table td,
+  .cycle-end td {
+    padding: 8px 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .schedule-table td::before {
+    display: block;
+    margin-bottom: 2px;
+    color: #888;
+    content: attr(data-label);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .schedule-table td:nth-child(1),
+  .schedule-table td:nth-child(2) {
+    display: inline-block;
+    width: auto;
+    margin-right: 24px;
+  }
+
+  .schedule-table td:nth-child(1)::before,
+  .schedule-table td:nth-child(2)::before {
+    display: none;
+  }
+
+  .schedule-note {
+    display: block;
+  }
+
+  .schedule-note strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .learning-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-flow article {
+    min-height: auto;
+  }
+
+  footer {
+    display: block;
+    padding-inline: 20px;
+  }
+
+  footer a {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
