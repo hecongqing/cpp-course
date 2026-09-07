@@ -8,20 +8,22 @@
       content="C++ Programming course website for international undergraduate students."
     />
     <title>C++ Programming</title>
-    <link rel="stylesheet" href="styles.css?v=20260902-9" />
+    <link rel="canonical" href="https://hecongqing.github.io/cpp-course/" />
+    <link rel="stylesheet" href="styles.css?v=20260907-3" />
     <script src="script.js?v=20260828-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
 
     <aside class="course-sidebar" aria-label="Course navigation">
+      <a class="profile-home-link" href="/" data-en="← Instructor homepage" data-zh="← 教师主页">← Instructor homepage</a>
       <div class="brand-block">
         <a class="course-code" href="#overview" aria-label="C++ Programming home">C++</a>
         <p class="course-name">Programming</p>
         <p class="course-meta" data-en="International Undergraduate Course" data-zh="留学生本科课程">
           International Undergraduate Course
         </p>
-        <p class="course-term" data-en="16 Weeks · C++" data-zh="16周 · C++">16 Weeks · C++</p>
+        <p class="course-term" data-en="8 Theory · 6 Labs · 2 Review" data-zh="8个理论周 · 6个实验周 · 2个复习周">8 Theory · 6 Labs · 2 Review</p>
       </div>
 
       <nav class="sidebar-nav" aria-label="Primary navigation">
@@ -29,7 +31,6 @@
         <a href="#schedule" data-en="Schedule" data-zh="教学进度">Schedule</a>
         <a href="#grading" data-en="Grading" data-zh="课程评分">Grading</a>
         <a href="#resources" data-en="Resources" data-zh="课程资源">Resources</a>
-        <a href="https://hecongqing.github.io/" data-en="Homepage" data-zh="个人主页">Homepage</a>
       </nav>
 
       <div class="sidebar-note">
@@ -60,7 +61,7 @@
             <div>
               <div class="section-heading">
                 <p class="section-kicker" data-en="START HERE" data-zh="从这里开始">START HERE</p>
-                <h1 data-en="Introduction to C++" data-zh="C++简介">Introduction to C++</h1>
+                <h1 data-en="Getting Started with C++" data-zh="C++入门">Getting Started with C++</h1>
               </div>
 
               <div class="intro-copy">
@@ -74,16 +75,16 @@
                 <p>
                   <span aria-hidden="true">🧭</span>
                   <span
-                    data-en="We begin with variables, expressions, input/output, selection, repetition, and functions, then move to strings, vectors, pointers, classes, streams, and inheritance. Students learn to read, write, test, and debug C++ programs throughout the course."
-                    data-zh="课程从变量、表达式、输入输出、选择、循环和函数开始，逐步进入字符串、向量、指针、类、流与继承，并贯穿训练学生阅读、编写、测试和调试C++程序的能力。"
-                  >We begin with variables, expressions, input/output, selection, repetition, and functions, then move to strings, vectors, pointers, classes, streams, and inheritance. Students learn to read, write, test, and debug C++ programs throughout the course.</span>
+                    data-en="After an introduction to C++, we spend a full week on data types, variables, input and output, and arithmetic. We then study loops, branching statements, and functions before introducing objects and classes, class inheritance, and polymorphic public inheritance. Arrays, strings, references, and object initialization are introduced where they are needed. Six guided labs reinforce these topics, and the final two weeks are for review."
+                    data-zh="C++入门之后，用完整一周学习数据类型、变量、输入输出和基本运算，再学习循环、分支语句和函数，随后进入对象和类、类继承及多态公有继承。数组、字符串、引用和对象初始化均在需要使用时提前介绍。六次指导性实验用于巩固所学内容，最后两周安排复习。"
+                  >After an introduction to C++, we spend a full week on data types, variables, input and output, and arithmetic. We then study loops, branching statements, and functions before introducing objects and classes, class inheritance, and polymorphic public inheritance. Arrays, strings, references, and object initialization are introduced where they are needed. Six guided labs reinforce these topics, and the final two weeks are for review.</span>
                 </p>
                 <p>
                   <span aria-hidden="true">🧪</span>
                   <span
-                    data-en="Lectures and practical tasks are built around small, meaningful programs, with an emphasis on program design, problem decomposition, code organization, and debugging. The course concludes with a complete, well-structured project."
-                    data-zh="课堂讲授与实践任务围绕有实际意义的小型程序展开，重点培养程序设计、问题分解、代码组织和调试能力，并最终完成一个结构清楚的综合项目。"
-                  >Lectures and practical tasks are built around small, meaningful programs, with an emphasis on program design, problem decomposition, code organization, and debugging. The course concludes with a complete, well-structured project.</span>
+                    data-en="Lectures and labs focus on one core idea at a time. Students complete starter code, run simple tests, and explain their changes. Student information examples connect the object-oriented labs."
+                    data-zh="理论课和实验每次聚焦一个核心知识点。学生补全代码框架、运行简单测试，并解释自己的修改。面向对象实验使用学生信息的例子逐步展开。"
+                  >Lectures and labs focus on one core idea at a time. Students complete starter code, run simple tests, and explain their changes. Student information examples connect the object-oriented labs.</span>
                 </p>
               </div>
             </div>
@@ -107,7 +108,7 @@
 
         <section id="schedule" class="section anchor-section">
           <div class="section-heading schedule-heading">
-            <p class="section-kicker" data-en="16-WEEK PLAN" data-zh="16周计划">16-WEEK PLAN</p>
+            <p class="section-kicker" data-en="8 THEORY WEEKS · 6 LAB WEEKS · 2 REVIEW WEEKS" data-zh="8个理论周 · 6个实验周 · 2个复习周">8 THEORY WEEKS · 6 LAB WEEKS · 2 REVIEW WEEKS</p>
             <h2 data-en="Course Schedule" data-zh="课程教学进度">Course Schedule</h2>
           </div>
 
@@ -123,11 +124,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="mixed-row">
+                <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">1</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge mixed" data-en="Mixed" data-zh="混合">Mixed</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 1" data-zh="理论周 1">Theory 1</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Introduction" data-zh="简介">Introduction</strong>
+                    <strong data-en="Getting Started with C++" data-zh="C++入门">Getting Started with C++</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -141,9 +142,9 @@
                 </tr>
                 <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">2</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 2" data-zh="理论周 2">Theory 2</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Types" data-zh="类型">Types</strong>
+                    <strong data-en="Dealing with Data" data-zh="处理数据">Dealing with Data</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -155,11 +156,11 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=02" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-                <tr class="lab-row cycle-end">
+                <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">3</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 1" data-zh="实践一">Lab 1</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 3" data-zh="理论周 3">Theory 3</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Input/Output" data-zh="输入输出">Input/Output</strong>
+                    <strong data-en="Loops and Relational Expressions" data-zh="循环和关系表达式">Loops and Relational Expressions</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -171,12 +172,11 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=03" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-
-                <tr class="mixed-row">
+                <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">4</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge mixed" data-en="Mixed" data-zh="混合">Mixed</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 1" data-zh="实验周 1">Lab 1</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Selection & Repetition" data-zh="选择与循环">Selection &amp; Repetition</strong>
+                    <strong data-en="Loops and Relational Expressions" data-zh="循环和关系表达式">Loops and Relational Expressions</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -185,14 +185,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=04" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab01.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
                 <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">5</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 4" data-zh="理论周 4">Theory 4</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Functions" data-zh="函数">Functions</strong>
+                    <strong data-en="Branching Statements and Logical Operators" data-zh="分支语句和逻辑运算符">Branching Statements and Logical Operators</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -206,9 +206,9 @@
                 </tr>
                 <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">6</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 2" data-zh="实践二">Lab 2</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 2" data-zh="实验周 2">Lab 2</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Functions" data-zh="函数">Functions</strong>
+                    <strong data-en="Branching Statements and Logical Operators" data-zh="分支语句和逻辑运算符">Branching Statements and Logical Operators</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -217,15 +217,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=06" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab02.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-
-                <tr class="mixed-row">
+                <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">7</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge mixed" data-en="Mixed" data-zh="混合">Mixed</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 5" data-zh="理论周 5">Theory 5</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Containers" data-zh="容器">Containers</strong>
+                    <strong data-en="Functions: C++’s Programming Modules" data-zh="函数：C++的编程模块">Functions: C++’s Programming Modules</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -237,11 +236,11 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=07" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-                <tr class="theory-row">
+                <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">8</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 3" data-zh="实验周 3">Lab 3</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Pointers" data-zh="指针">Pointers</strong>
+                    <strong data-en="Functions" data-zh="函数">Functions</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -250,14 +249,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=08" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab03.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-                <tr class="lab-row cycle-end">
+                <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">9</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 3" data-zh="实践三">Lab 3</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 6" data-zh="理论周 6">Theory 6</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Algorithms" data-zh="算法">Algorithms</strong>
+                    <strong data-en="Objects and Classes" data-zh="对象和类">Objects and Classes</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -269,12 +268,11 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=09" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-
-                <tr class="theory-row">
+                <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">10</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 4" data-zh="实验周 4">Lab 4</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Classes" data-zh="类">Classes</strong>
+                    <strong data-en="Objects and Classes" data-zh="对象和类">Objects and Classes</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -283,14 +281,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=10" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab04.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
                 <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">11</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 7" data-zh="理论周 7">Theory 7</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Classes" data-zh="类">Classes</strong>
+                    <strong data-en="Class Inheritance" data-zh="类继承">Class Inheritance</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -304,9 +302,9 @@
                 </tr>
                 <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">12</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 4" data-zh="实践四">Lab 4</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 5" data-zh="实验周 5">Lab 5</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Classes" data-zh="类">Classes</strong>
+                    <strong data-en="Class Inheritance" data-zh="类继承">Class Inheritance</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -315,15 +313,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=12" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab05.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-
                 <tr class="theory-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">13</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory" data-zh="理论">Theory</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge theory" data-en="Theory 8" data-zh="理论周 8">Theory 8</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Streams" data-zh="流">Streams</strong>
+                    <strong data-en="Polymorphic Public Inheritance" data-zh="多态公有继承">Polymorphic Public Inheritance</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -335,11 +332,11 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=13" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-                <tr class="mixed-row">
+                <tr class="lab-row cycle-end">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">14</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge mixed" data-en="Mixed" data-zh="混合">Mixed</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 6" data-zh="实验周 6">Lab 6</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Inheritance" data-zh="继承">Inheritance</strong>
+                    <strong data-en="Polymorphic Public Inheritance" data-zh="多态公有继承">Polymorphic Public Inheritance</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -348,14 +345,14 @@
                     </div>
                   </td>
                   <td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">
-                    <a class="assignment-document" href="materials/assignments/mock.html?week=14" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
+                    <a class="assignment-document" href="materials/assignments/lab06.html"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-                <tr class="lab-row cycle-end">
+                <tr class="review-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">15</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 5" data-zh="实践五">Lab 5</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge review" data-en="Review" data-zh="复习周">Review</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
-                    <strong data-en="Building C++ Projects" data-zh="C++项目构建">Building C++ Projects</strong>
+                    <strong data-en="Review" data-zh="复习">Review</strong>
                   </td>
                   <td data-label="Materials" data-label-en="Materials" data-label-zh="材料">
                     <div class="lecture-links">
@@ -367,10 +364,9 @@
                     <a class="assignment-document" href="materials/assignments/mock.html?week=15" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span data-en="Assignment" data-zh="作业">Assignment</span></a>
                   </td>
                 </tr>
-
-                <tr class="lab-row final-row">
+                <tr class="review-row">
                   <td data-label="Week" data-label-en="Week" data-label-zh="周次"><span class="week-number">16</span></td>
-                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge lab" data-en="Lab 6" data-zh="实践六">Lab 6</span></td>
+                  <td data-label="Mode" data-label-en="Mode" data-label-zh="类型"><span class="mode-badge review" data-en="Review" data-zh="复习周">Review</span></td>
                   <td data-label="Topic" data-label-en="Topic" data-label-zh="题目">
                     <strong data-en="Review" data-zh="复习">Review</strong>
                   </td>
@@ -387,12 +383,44 @@
               </tbody>
             </table>
           </div>
+          <!-- weekly-learning-notes:start -->
+<details class="weekly-learning-notes" id="weekly-learning-notes"><summary data-en="Weekly Learning Notes" data-zh="每周学习要点">Weekly Learning Notes</summary><div class="weekly-learning-content"><p data-en="Use these notes to prepare for each theory week and its class check. The six lab assignments remain short, guided exercises." data-zh="以下要点用于理论周的课前准备和课堂检查。六个实验继续采用简短的指导性练习。">Use these notes to prepare for each theory week and its class check. The six lab assignments remain short, guided exercises.</p><article id="learning-week-01"><h3 data-en="Week 1 — Getting Started with C++" data-zh="第1周：C++入门">Week 1 — Getting Started with C++</h3><ul>
+<li data-en="Create, compile, and run a program. Read #include &lt;iostream&gt;, main(), std::cout, return, braces, and semicolons. Use std:: to identify names from the standard library." data-zh="创建、编译并运行程序；认识 #include &lt;iostream&gt;、main()、std::cout、return、花括号和分号；理解 std:: 用于标明标准库中的名称。">Create, compile, and run a program. Read #include &lt;iostream&gt;, main(), std::cout, return, braces, and semicolons. Use std:: to identify names from the standard library.</li>
+<li data-en="Class check: change the message in Hello, World! and fix a missing semicolon. Learn to read the compiler&#x27;s first error message." data-zh="课堂检查：修改 Hello, World! 的输出文字，并修复缺少分号的错误；学会阅读编译器的第一条错误信息。">Class check: change the message in Hello, World! and fix a missing semicolon. Learn to read the compiler&#x27;s first error message.</li>
+</ul></article><article id="learning-week-02"><h3 data-en="Week 2 — Dealing with Data" data-zh="第2周：处理数据">Week 2 — Dealing with Data</h3><ul>
+<li data-en="Declare and initialize int, double, char, and bool variables. Distinguish initialization from assignment; introduce const and simple type conversions." data-zh="声明并初始化 int、double、char 和 bool 变量；区分初始化与赋值；介绍 const 及简单的类型转换。">Declare and initialize int, double, char, and bool variables. Distinguish initialization from assignment; introduce const and simple type conversions.</li>
+<li data-en="Use std::cin and std::cout, +, -, *, /, and %. Explain integer division, floating-point division, operator precedence, and compound assignment such as +=." data-zh="使用 std::cin、std::cout 及 +、-、*、/、%；讲清整数除法、浮点数除法、运算符优先级和 += 等复合赋值。">Use std::cin and std::cout, +, -, *, /, and %. Explain integer division, floating-point division, operator precedence, and compound assignment such as +=.</li>
+<li data-en="Class check: read two integers and print their sum. Compare 5 / 2 with 5 / 2.0. Predict 5 % 2. Use valid numeric input throughout these first exercises." data-zh="课堂检查：输入两个整数并输出其和；比较 5 / 2 与 5 / 2.0；预测 5 % 2 的结果。入门练习统一使用有效的数值输入。">Class check: read two integers and print their sum. Compare 5 / 2 with 5 / 2.0. Predict 5 % 2. Use valid numeric input throughout these first exercises.</li>
+</ul></article><article id="learning-week-03"><h3 data-en="Week 3 — Loops and Relational Expressions" data-zh="第3周：循环和关系表达式">Week 3 — Loops and Relational Expressions</h3><ul>
+<li data-en="Trace for and while loops using initialization, a test condition, and an update. Use relational operators and ++; recognize the do while loop and its first execution before the test." data-zh="通过初始化、测试条件和更新跟踪 for 与 while 循环；使用关系运算符和 ++；认识 do while 循环先执行一次再测试的特点。">Trace for and while loops using initialization, a test condition, and an update. Use relational operators and ++; recognize the do while loop and its first execution before the test.</li>
+<li data-en="Introduce a one-dimensional array with three integers: initialization, indexes starting at 0, and valid bounds. Use a short for loop to read its elements." data-zh="用含3个整数的一维数组介绍初始化、从0开始的下标及有效范围；用一个简短的 for 循环读取各元素。">Introduce a one-dimensional array with three integers: initialization, indexes starting at 0, and valid bounds. Use a short for loop to read its elements.</li>
+<li data-en="Class check: trace the sum from 1 to 3 and explain why a loop for n = 0 does not run. Identify the valid indexes of int scores[3]." data-zh="课堂检查：跟踪1到3的累加过程，解释 n = 0 时循环为何不执行；指出 int scores[3] 的有效下标。">Class check: trace the sum from 1 to 3 and explain why a loop for n = 0 does not run. Identify the valid indexes of int scores[3].</li>
+</ul></article><article id="learning-week-05"><h3 data-en="Week 5 — Branching Statements and Logical Operators" data-zh="第5周：分支语句和逻辑运算符">Week 5 — Branching Statements and Logical Operators</h3><ul>
+<li data-en="Use if, if else, and else if with relational operators and the logical operators &amp;&amp;, ||, and !. Distinguish == from = and explain short-circuit evaluation with a small example." data-zh="使用 if、if else、else if、关系运算符及逻辑运算符 &amp;&amp;、||、!；区分 == 与 =；通过小例子说明短路求值。">Use if, if else, and else if with relational operators and the logical operators &amp;&amp;, ||, and !. Distinguish == from = and explain short-circuit evaluation with a small example.</li>
+<li data-en="Read a simple switch statement and recognize break and continue. Class check: test a passing-score condition with 59 and 60; write a condition for a score from 0 to 100." data-zh="阅读简单的 switch 语句，认识 break 和 continue。课堂检查：用59和60测试及格条件；写出成绩在0到100之间的条件。">Read a simple switch statement and recognize break and continue. Class check: test a passing-score condition with 59 and 60; write a condition for a score from 0 to 100.</li>
+</ul></article><article id="learning-week-07"><h3 data-en="Week 7 — Functions: C++’s Programming Modules" data-zh="第7周：函数：C++的编程模块">Week 7 — Functions: C++’s Programming Modules</h3><ul>
+<li data-en="Define, declare, and call a function. Distinguish formal arguments from actual arguments; trace passing by value, return values, and local scope." data-zh="定义、声明并调用函数；区分形参与实参；跟踪按值传递、返回值及局部作用域。">Define, declare, and call a function. Distinguish formal arguments from actual arguments; trace passing by value, return values, and local scope.</li>
+<li data-en="Introduce a reference as another name for an existing variable. Compare passing an int by value with passing it by reference; recognize a const reference as read-only access through that reference." data-zh="将引用解释为已有变量的另一个名称；比较 int 的按值传递与按引用传递；认识通过 const 引用只能读取、不能修改所引用的对象。">Introduce a reference as another name for an existing variable. Compare passing an int by value with passing it by reference; recognize a const reference as read-only access through that reference.</li>
+<li data-en="Class check: write add(a, b), then predict whether changing an int formal argument changes the caller&#x27;s variable. Revisit references in Week 13 with class objects." data-zh="课堂检查：编写 add(a, b)，再判断修改 int 形参是否改变调用者的变量；第13周使用类对象再次巩固引用。">Class check: write add(a, b), then predict whether changing an int formal argument changes the caller&#x27;s variable. Revisit references in Week 13 with class objects.</li>
+</ul></article><article id="learning-week-09"><h3 data-en="Week 9 — Objects and Classes" data-zh="第9周：对象和类">Week 9 — Objects and Classes</h3><ul>
+<li data-en="First use std::string to store and print a name. Then define a class with data members and member functions; explain objects, public and private access, and the dot operator." data-zh="先使用 std::string 保存并输出姓名，再定义含数据成员和成员函数的类；解释对象、public 与 private 访问权限以及点运算符。">First use std::string to store and print a name. Then define a class with data members and member functions; explain objects, public and private access, and the dot operator.</li>
+<li data-en="Use a constructor to set up an object. Compare initialization with assignment in the constructor body. Introduce member initialization lists and const member functions; trace when a local object&#x27;s constructor and destructor run." data-zh="使用构造函数完成对象的初始设置；比较初始化与构造函数体内的赋值；介绍成员初始化列表和 const 成员函数；跟踪局部对象的构造函数与析构函数何时执行。">Use a constructor to set up an object. Compare initialization with assignment in the constructor body. Introduce member initialization lists and const member functions; trace when a local object&#x27;s constructor and destructor run.</li>
+<li data-en="Class check: create two Student objects and call show() on each. Explain why changing one student&#x27;s score leaves the other student&#x27;s score unchanged." data-zh="课堂检查：创建两个 Student 对象，分别调用 show()；解释修改一个学生的成绩为何不会改变另一个学生的成绩。">Class check: create two Student objects and call show() on each. Explain why changing one student&#x27;s score leaves the other student&#x27;s score unchanged.</li>
+</ul></article><article id="learning-week-11"><h3 data-en="Week 11 — Class Inheritance" data-zh="第11周：类继承">Week 11 — Class Inheritance</h3><ul>
+<li data-en="Explain the is-a relationship, base and derived classes, and public inheritance. Access private base-class data through a public member function." data-zh="解释 is-a 关系、基类与派生类、公有继承；通过公有成员函数读取基类的私有数据。">Explain the is-a relationship, base and derived classes, and public inheritance. Access private base-class data through a public member function.</li>
+<li data-en="Read the supplied member initialization list: construct the base-class part first, then initialize derived data members. Class check: explain Person(studentName) and reuse getName() when displaying a Student." data-zh="阅读提供的成员初始化列表：先构造基类部分，再初始化派生类数据成员。课堂检查：解释 Person(studentName)，并在显示 Student 信息时复用 getName()。">Read the supplied member initialization list: construct the base-class part first, then initialize derived data members. Class check: explain Person(studentName) and reuse getName() when displaying a Student.</li>
+</ul></article><article id="learning-week-13"><h3 data-en="Week 13 — Polymorphic Public Inheritance" data-zh="第13周：多态公有继承">Week 13 — Polymorphic Public Inheritance</h3><ul>
+<li data-en="Review references with const Person&amp;. Explain why a reference can refer to a Student or Teacher without copying the object into a Person value." data-zh="使用 const Person&amp; 回顾引用；解释引用为何能够指向 Student 或 Teacher，而不将对象复制为一个 Person 值。">Review references with const Person&amp;. Explain why a reference can refer to a Student or Teacher without copying the object into a Person value.</li>
+<li data-en="Use a virtual function and override. Keep the function&#x27;s const qualifier consistent. Trace which introduce() runs when it is called through a base-class reference." data-zh="使用虚函数和 override，并保持函数的 const 限定符一致；跟踪通过基类引用调用时执行哪个 introduce()。">Use a virtual function and override. Keep the function&#x27;s const qualifier consistent. Trace which introduce() runs when it is called through a base-class reference.</li>
+<li data-en="Recognize the supplied virtual destructor and = default: the compiler supplies the destructor; virtual supports correct destruction through a base-class pointer. Class check: predict the Student and Teacher messages. This exercise uses local objects and references." data-zh="认识框架中的虚析构函数和 = default：由编译器生成析构函数，virtual 支持通过基类指针正确析构。课堂检查：预测 Student 与 Teacher 的输出。本练习使用局部对象和引用。">Recognize the supplied virtual destructor and = default: the compiler supplies the destructor; virtual supports correct destruction through a base-class pointer. Class check: predict the Student and Teacher messages. This exercise uses local objects and references.</li>
+</ul></article><h3 data-en="Weeks 15–16 — Review" data-zh="第15—16周：复习">Weeks 15–16 — Review</h3><p data-en="Week 15 revisits data, loops, branching statements, and functions. Week 16 revisits objects and classes, inheritance, and virtual functions using the lab programs and short code-reading questions." data-zh="第15周复习数据、循环、分支语句和函数；第16周结合实验程序和简短的代码阅读题，复习对象和类、继承以及虚函数。">Week 15 revisits data, loops, branching statements, and functions. Week 16 revisits objects and classes, inheritance, and virtual functions using the lab programs and short code-reading questions.</p><p><a href="https://ptgmedia.pearsoncmg.com/images/9780321776402/samplepages/9780321776402_Sample.pdf" target="_blank" rel="noopener"><span data-en="Textbook terminology: C++ Primer Plus, 6th Edition" data-zh="教材术语依据：C++ Primer Plus 第6版">Textbook terminology: C++ Primer Plus, 6th Edition</span></a></p></div></details>
+<!-- weekly-learning-notes:end -->
           <div class="schedule-note">
-            <strong data-en="Weekly tasks:" data-zh="每周任务：">Weekly tasks:</strong>
+            <strong data-en="Class tasks:" data-zh="课堂任务：">Class tasks:</strong>
             <span
-              data-en="Theory weeks use a short exit check; mixed weeks include an in-class coding task; lab weeks require a submission. Extra homework is assigned only when needed."
-              data-zh="理论周安排简短出口题；混合周完成当堂编程任务；实践周提交实验成果。仅在需要巩固时另外布置课后作业。"
-            >Theory weeks use a short exit check; mixed weeks include an in-class coding task; lab weeks require a submission. Extra homework is assigned only when needed.</span>
+              data-en="Theory weeks use a short exit check; lab assignments include instructions, starter code, and submission requirements. Extra homework is assigned only when needed."
+              data-zh="理论周安排简短出口题；实验周的作业页面提供实验指导、代码框架和提交要求。仅在需要巩固时另外布置课后作业。"
+            >Theory weeks use a short exit check; lab assignments include instructions, starter code, and submission requirements. Extra homework is assigned only when needed.</span>
           </div>
         </section>
 
@@ -418,9 +446,10 @@
           </div>
           <div class="resource-grid">
             <article>
-              <span class="resource-tag primary" data-en="TEACHING SPINE" data-zh="教学主线">TEACHING SPINE</span>
-              <h3>NTU Programming Design</h3>
-              <p data-en="Core sequence, examples and practice loop for programming fundamentals." data-zh="提供程序设计基础的核心顺序、例题和练习闭环。">Core sequence, examples and practice loop for programming fundamentals.</p>
+              <span class="resource-tag primary" data-en="TEXTBOOK REFERENCE" data-zh="教材参考">TEXTBOOK REFERENCE</span>
+              <h3>C++ Primer Plus, 6th Edition</h3>
+              <p data-en="Course topics and C++ terminology follow Stephen Prata’s English edition." data-zh="课程主题和C++术语采用 Stephen Prata 英文原版教材的表述。">Course topics and C++ terminology follow Stephen Prata’s English edition.</p>
+              <a class="resource-link" href="https://www.informit.com/store/c-plus-plus-primer-plus-9780132781176" target="_blank" rel="noopener"><span data-en="View Textbook Contents" data-zh="查看教材目录">View Textbook Contents</span><span aria-hidden="true">→</span></a>
             </article>
             <article>
               <span class="resource-tag local" data-en="LOCAL ALIGNMENT" data-zh="本校衔接">LOCAL ALIGNMENT</span>
@@ -453,8 +482,8 @@
       </div>
 
       <footer>
-        <p data-en="C++ Programming · 16 weeks · 48 class hours · C++" data-zh="C++程序设计 · 16周 · 48学时 · C++">
-          C++ Programming · 16 weeks · 48 class hours · C++
+        <p data-en="C++ Programming · 16 teaching weeks · 48 class hours · C++" data-zh="C++程序设计 · 16个教学周 · 48学时 · C++">
+          C++ Programming · 16 teaching weeks · 48 class hours · C++
         </p>
         <a href="#overview" data-en="Back to top ↑" data-zh="返回顶部 ↑">Back to top ↑</a>
       </footer>

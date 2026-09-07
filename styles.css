@@ -20,6 +20,24 @@
   box-sizing: border-box;
 }
 
+.profile-home-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin: -12px 0 24px;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.profile-home-link:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 3px solid #b98628; outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { transition: none !important; }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
@@ -412,11 +430,11 @@ h3 {
 }
 
 .schedule-table th:nth-child(1) {
-  width: 64px;
+  width: 80px;
 }
 
 .schedule-table th:nth-child(2) {
-  width: 90px;
+  width: 110px;
 }
 
 .schedule-table th:nth-child(3) {
@@ -507,6 +525,7 @@ h3 {
   display: inline-block;
   min-width: 65px;
   padding: 4px 8px;
+  white-space: nowrap;
   text-align: center;
   border-radius: 999px;
   font-size: 11px;
@@ -517,6 +536,11 @@ h3 {
 .mode-badge.theory {
   color: var(--theory);
   background: var(--theory-soft);
+}
+
+.mode-badge.review {
+  color: #5f6368;
+  background: #f0f1f2;
 }
 
 .mode-badge.mixed {
@@ -547,6 +571,44 @@ h3 {
 
 .cycle-end td {
   border-bottom: 3px solid #d9d6d1;
+}
+
+.weekly-learning-notes {
+  margin-top: 18px;
+  border: 1px solid #dedbd7;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.weekly-learning-notes summary {
+  padding: 14px 18px;
+  color: var(--stanford-red-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weekly-learning-notes summary:focus-visible {
+  outline: 3px solid #2563a6;
+  outline-offset: 3px;
+}
+
+.weekly-learning-content {
+  padding: 0 18px 14px;
+  overflow-wrap: anywhere;
+}
+
+.weekly-learning-content h3 {
+  margin: 22px 0 8px;
+  font-size: 16px;
+}
+
+.weekly-learning-content ul {
+  padding-left: 22px;
+}
+
+.weekly-learning-content li {
+  margin: 7px 0;
 }
 
 .schedule-note {

@@ -121,7 +121,7 @@
   <body>
     <header><strong>C++ Programming</strong></header>
     <main>
-      <p class="eyebrow" id="week-label">Course material · Week</p>
+      <p class="eyebrow" id="week-label">Course material · Session</p>
       <h1 id="resource-title">Course Material</h1>
       <p class="zh-title" id="resource-title-zh">课程材料</p>
 
@@ -136,8 +136,10 @@
 
     <script>
       const params = new URLSearchParams(window.location.search);
-      const week = params.get("week") || "01";
-      const weekNumber = Number(week) || 1;
+      const isLegacyWeek = !params.has("session") && params.has("week");
+      const sessionNumber = Number(params.get("session") || params.get("week")) || 1;
+      const unitEn = isLegacyWeek ? "Week" : "Session";
+      const unitZh = isLegacyWeek ? "周" : "次课";
       const requestedKind = params.get("kind") || "assignment";
       const kind = ["slides", "code", "assignment"].includes(requestedKind) ? requestedKind : "assignment";
       const resources = {
@@ -162,12 +164,12 @@
       };
       const resource = resources[kind];
 
-      document.getElementById("week-label").textContent = `${resource.en} · Week ${weekNumber}`;
-      document.getElementById("resource-title").textContent = `Week ${weekNumber} ${resource.en}`;
-      document.getElementById("resource-title-zh").textContent = `第${weekNumber}周${resource.zh}`;
+      document.getElementById("week-label").textContent = `${resource.en} · ${unitEn} ${sessionNumber}`;
+      document.getElementById("resource-title").textContent = `${unitEn} ${sessionNumber} ${resource.en}`;
+      document.getElementById("resource-title-zh").textContent = `第${sessionNumber}${unitZh}${resource.zh}`;
       document.getElementById("status-en").textContent = resource.statusEn;
       document.getElementById("status-zh").textContent = resource.statusZh;
-      document.title = `Week ${weekNumber} ${resource.en} · C++ Programming`;
+      document.title = `${unitEn} ${sessionNumber} ${resource.en} · C++ Programming`;
     </script>
   </body>
 </html>

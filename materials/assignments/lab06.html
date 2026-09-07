@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 6 — Polymorphic Public Inheritance · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/lab06.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 14 · LAB 6" data-zh="第14周 · 实验6" class="eyebrow">WEEK 14 · LAB 6</p>
+      <h1 data-en="Lab 6 — Polymorphic Public Inheritance" data-zh="实验6：多态公有继承">Lab 6 — Polymorphic Public Inheritance</h1>
+      <p data-en="Use one function to introduce a student and a teacher." data-zh="使用同一个函数介绍学生和教师。" class="summary">Use one function to introduce a student and a teacher.</p>
+    </div>
+    <nav class="section-nav" aria-label="Lab sections">
+      <a href="#objectives"><span data-en="Objectives" data-zh="实验目的">Objectives</span></a><a href="#environment"><span data-en="Environment" data-zh="实验环境">Environment</span></a><a href="#tasks"><span data-en="Tasks" data-zh="实验任务">Tasks</span></a><a href="#submission"><span data-en="Submission" data-zh="提交要求">Submission</span></a>
+    </nav>
+    <section id="objectives"><h2 data-en="I. Objectives" data-zh="一、实验目的">I. Objectives</h2><ul>
+<li data-en="Recognize a virtual function redefined in a derived class using override." data-zh="识别虚函数，以及使用 override 在派生类中对虚函数的重新定义。">Recognize a virtual function redefined in a derived class using override.</li>
+<li data-en="Observe different behavior when calling a virtual function through a base class reference." data-zh="观察通过基类引用调用虚函数时产生的不同行为。">Observe different behavior when calling a virtual function through a base class reference.</li>
+</ul><h3 data-en="Before the Lab" data-zh="实验前应掌握">Before the Lab</h3><p data-en="Weeks 7, 9, and 13: references, const member functions, virtual functions, and override. const Person&amp; refers to the original object without copying it. Review the supplied virtual destructor before running the code; keep that line as provided." data-zh="第7、9、13周：引用、const 成员函数、虚函数和 override。const Person&amp; 引用原对象，不复制对象。运行前回顾框架中的虚析构函数，该行保留即可。" class="prerequisites">Weeks 7, 9, and 13: references, const member functions, virtual functions, and override. const Person&amp; refers to the original object without copying it. Review the supplied virtual destructor before running the code; keep that line as provided.</p></section><section id="environment"><h2 data-en="II. Environment" data-zh="二、实验环境">II. Environment</h2><ul>
+<li data-en="A computer with Windows, macOS, or Linux." data-zh="一台安装 Windows、macOS 或 Linux 的计算机。">A computer with Windows, macOS, or Linux.</li>
+<li data-en="Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class." data-zh="使用 OnlineGDB 的 C++ 模式，或课堂演示的 C++ 编程环境。">Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class.</li>
+<li data-en="Save your program as lab06.cpp. Use one source file for this lab." data-zh="将程序保存为 lab06.cpp。本次实验使用一个源文件完成。">Save your program as lab06.cpp. Use one source file for this lab.</li>
+</ul><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a></section><section id="tasks"><h2 data-en="III. Tasks and Requirements" data-zh="三、实验内容和要求">III. Tasks and Requirements</h2><p data-en="Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished." data-zh="补全代码框架中的 TODO，再将运行结果与预期结果比较。代码框架中的练习部分尚未完成。" class="instruction">Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished.</p><article class="task"><h3 data-en="Task 1 — Read the common interface" data-zh="任务1：阅读共同接口">Task 1 — Read the common interface</h3><ul>
+<li data-en="Person provides virtual introduce(). Student and Teacher each override it. showIntroduction() accepts a Person reference and calls introduce(). Keep this supplied structure." data-zh="Person 提供虚函数 introduce()，Student 和 Teacher 分别重写它。showIntroduction() 接收 Person 引用并调用 introduce()。保留已提供的结构即可。">Person provides virtual introduce(). Student and Teacher each override it. showIntroduction() accepts a Person reference and calls introduce(). Keep this supplied structure.</li>
+</ul></article><article class="task"><h3 data-en="Task 2 — Complete the two introductions" data-zh="任务2：完成两种自我介绍">Task 2 — Complete the two introductions</h3><ul>
+<li data-en="At TODO 1, print I am a student. At TODO 2, print I am a teacher. End each line with a newline. Keep const and override in the function declarations." data-zh="在 TODO 1 处输出 I am a student.，在 TODO 2 处输出 I am a teacher.，每句后面换行。保留函数声明中的 const 和 override。">At TODO 1, print I am a student. At TODO 2, print I am a teacher. End each line with a newline. Keep const and override in the function declarations.</li>
+</ul></article><article class="task"><h3 data-en="Task 3 — Observe and explain the two calls" data-zh="任务3：观察并解释两次调用">Task 3 — Observe and explain the two calls</h3><ul>
+<li data-en="Run main() and compare the two output lines. Then swap the two calls to showIntroduction() and run again; the output order should also swap. No pointers or dynamic allocation are needed." data-zh="运行 main()，比较两行输出。再交换两次 showIntroduction() 调用的顺序并重新运行，输出顺序也应交换。本实验使用引用完成，不需要编写指针或动态内存分配代码。">Run main() and compare the two output lines. Then swap the two calls to showIntroduction() and run again; the output order should also swap. No pointers or dynamic allocation are needed.</li>
+</ul></article><div class="code-heading"><h3 data-en="Starter Code" data-zh="代码框架">Starter Code</h3><a href="lab06.cpp" download="lab06.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a></div><pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+
+class Person {
+public:
+    virtual void introduce() const {
+        std::cout &lt;&lt; &quot;I am a person.&quot; &lt;&lt; &#x27;\n&#x27;;
+    }
+
+    virtual ~Person() = default;
+};
+
+class Student : public Person {
+public:
+    void introduce() const override {
+        // TODO 1: Print the student&#x27;s introduction.
+    }
+};
+
+class Teacher : public Person {
+public:
+    void introduce() const override {
+        // TODO 2: Print the teacher&#x27;s introduction.
+    }
+};
+
+void showIntroduction(const Person&amp; person) {
+    person.introduce();
+}
+
+int main() {
+    Student student;
+    Teacher teacher;
+    showIntroduction(student);
+    showIntroduction(teacher);
+    return 0;
+}
+</code></pre><h3 data-en="Expected Output" data-zh="预期运行结果">Expected Output</h3><p data-en="Expected output after completing both introductions." data-zh="完成两种自我介绍后的预期结果。">Expected output after completing both introductions.</p><pre class="expected-output"><code>I am a student.
+I am a teacher.</code></pre></section><section id="submission"><h2 data-en="IV. Submission" data-zh="四、提交要求">IV. Submission</h2><ul>
+<li data-en="Your completed lab06.cpp source file." data-zh="补全后的 lab06.cpp 源文件。">Your completed lab06.cpp source file.</li>
+<li data-en="One or two screenshots showing your test results." data-zh="一至两张能够展示测试结果的运行截图。">One or two screenshots showing your test results.</li>
+<li data-en="A short answer to each question below, in English or Chinese." data-zh="用中文或英文简短回答下面两个问题。">A short answer to each question below, in English or Chinese.</li>
+</ul><h3 data-en="Two Short Questions" data-zh="两个简短问题">Two Short Questions</h3><ol>
+<li data-en="Why does the same showIntroduction() function produce two different messages?" data-zh="为什么同一个 showIntroduction() 函数会产生两种不同的信息？">Why does the same showIntroduction() function produce two different messages?</li>
+<li data-en="Which class&#x27;s introduce() runs when the argument is teacher?" data-zh="实参为 teacher 时，调用的是哪个类的 introduce()？">Which class&#x27;s introduce() runs when the argument is teacher?</li>
+</ol></section>
+    <nav class="lab-nav" aria-label="Lab navigation"><a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a><a href="lab05.html"><span data-en="Previous Lab" data-zh="上一个实验">Previous Lab</span></a></nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

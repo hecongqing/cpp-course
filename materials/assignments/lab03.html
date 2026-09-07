@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 3 — Functions · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/lab03.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 8 · LAB 3" data-zh="第8周 · 实验3" class="eyebrow">WEEK 8 · LAB 3</p>
+      <h1 data-en="Lab 3 — Functions" data-zh="实验3：函数">Lab 3 — Functions</h1>
+      <p data-en="Add two numbers with a function." data-zh="使用函数计算两个数的和。" class="summary">Add two numbers with a function.</p>
+    </div>
+    <nav class="section-nav" aria-label="Lab sections">
+      <a href="#objectives"><span data-en="Objectives" data-zh="实验目的">Objectives</span></a><a href="#environment"><span data-en="Environment" data-zh="实验环境">Environment</span></a><a href="#tasks"><span data-en="Tasks" data-zh="实验任务">Tasks</span></a><a href="#submission"><span data-en="Submission" data-zh="提交要求">Submission</span></a>
+    </nav>
+    <section id="objectives"><h2 data-en="I. Objectives" data-zh="一、实验目的">I. Objectives</h2><ul>
+<li data-en="Create, compile, and run a small C++ program." data-zh="创建、编译并运行一个简单的 C++ 程序。">Create, compile, and run a small C++ program.</li>
+<li data-en="Define a function with two formal arguments and use its return value." data-zh="定义带两个形参的函数，并使用函数的返回值。">Define a function with two formal arguments and use its return value.</li>
+</ul><h3 data-en="Before the Lab" data-zh="实验前应掌握">Before the Lab</h3><p data-en="Week 7: function definitions, declarations, calls, formal and actual arguments, passing by value, return values, and local scope. This lab uses passing by value." data-zh="第7周：函数定义、声明、调用、形参与实参、按值传递、返回值及局部作用域。本实验使用按值传递。" class="prerequisites">Week 7: function definitions, declarations, calls, formal and actual arguments, passing by value, return values, and local scope. This lab uses passing by value.</p></section><section id="environment"><h2 data-en="II. Environment" data-zh="二、实验环境">II. Environment</h2><ul>
+<li data-en="A computer with Windows, macOS, or Linux." data-zh="一台安装 Windows、macOS 或 Linux 的计算机。">A computer with Windows, macOS, or Linux.</li>
+<li data-en="Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class." data-zh="使用 OnlineGDB 的 C++ 模式，或课堂演示的 C++ 编程环境。">Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class.</li>
+<li data-en="Save your program as lab03.cpp. Use one source file for this lab." data-zh="将程序保存为 lab03.cpp。本次实验使用一个源文件完成。">Save your program as lab03.cpp. Use one source file for this lab.</li>
+</ul><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a></section><section id="tasks"><h2 data-en="III. Tasks and Requirements" data-zh="三、实验内容和要求">III. Tasks and Requirements</h2><p data-en="Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished." data-zh="补全代码框架中的 TODO，再将运行结果与预期结果比较。代码框架中的练习部分尚未完成。" class="instruction">Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished.</p><article class="task"><h3 data-en="Task 1 — Read and run the starter code" data-zh="任务1：阅读并运行代码框架">Task 1 — Read and run the starter code</h3><ul>
+<li data-en="Find main() and add(). In the function definition, a and b are formal arguments. In add(first, second), first and second are actual arguments. Run the program and enter 3 5. The starter returns 0 because add() is not finished." data-zh="找到 main() 和 add()。函数定义中的 a、b 是形参；调用 add(first, second) 时的 first、second 是实参。运行程序并输入 3 5。框架中的 add() 尚未完成，因此会输出 0。">Find main() and add(). In the function definition, a and b are formal arguments. In add(first, second), first and second are actual arguments. Run the program and enter 3 5. The starter returns 0 because add() is not finished.</li>
+</ul></article><article class="task"><h3 data-en="Task 2 — Complete add()" data-zh="任务2：完成 add() 函数">Task 2 — Complete add()</h3><ul>
+<li data-en="Replace the placeholder return value with the sum of a and b. Keep the input and output code in main()." data-zh="将占位返回值改为 a 与 b 的和。输入和输出代码保留在 main() 中。">Replace the placeholder return value with the sum of a and b. Keep the input and output code in main().</li>
+</ul></article><article class="task"><h3 data-en="Task 3 — Test three inputs" data-zh="任务3：使用三组输入测试">Task 3 — Test three inputs</h3><ul>
+<li data-en="Run the program three times: 3 5 should give 8; 0 0 should give 0; -2 7 should give 5." data-zh="分别运行三次：输入 3 5 应得到 8；输入 0 0 应得到 0；输入 -2 7 应得到 5。">Run the program three times: 3 5 should give 8; 0 0 should give 0; -2 7 should give 5.</li>
+</ul></article><div class="code-heading"><h3 data-en="Starter Code" data-zh="代码框架">Starter Code</h3><a href="lab03.cpp" download="lab03.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a></div><pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+
+int add(int a, int b) {
+    // TODO 1: Return the sum of a and b.
+    return 0;
+}
+
+int main() {
+    int first = 0;
+    int second = 0;
+    std::cin &gt;&gt; first &gt;&gt; second;
+    std::cout &lt;&lt; &quot;Sum: &quot; &lt;&lt; add(first, second) &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre><h3 data-en="Expected Output" data-zh="预期运行结果">Expected Output</h3><p data-en="Example for input 3 5." data-zh="输入 3 5 时的示例结果。">Example for input 3 5.</p><pre class="expected-output"><code>Sum: 8</code></pre></section><section id="submission"><h2 data-en="IV. Submission" data-zh="四、提交要求">IV. Submission</h2><ul>
+<li data-en="Your completed lab03.cpp source file." data-zh="补全后的 lab03.cpp 源文件。">Your completed lab03.cpp source file.</li>
+<li data-en="One or two screenshots showing your test results." data-zh="一至两张能够展示测试结果的运行截图。">One or two screenshots showing your test results.</li>
+<li data-en="A short answer to each question below, in English or Chinese." data-zh="用中文或英文简短回答下面两个问题。">A short answer to each question below, in English or Chinese.</li>
+</ul><h3 data-en="Two Short Questions" data-zh="两个简短问题">Two Short Questions</h3><ol>
+<li data-en="What do a and b receive when add(first, second) is called?" data-zh="调用 add(first, second) 时，a 和 b 分别接收什么？">What do a and b receive when add(first, second) is called?</li>
+<li data-en="What value does return send back to main()?" data-zh="return 将什么值返回给 main()？">What value does return send back to main()?</li>
+</ol></section>
+    <nav class="lab-nav" aria-label="Lab navigation"><a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a><a href="lab02.html"><span data-en="Previous Lab" data-zh="上一个实验">Previous Lab</span></a><a href="lab04.html"><span data-en="Next Lab →" data-zh="下一个实验 →">Next Lab →</span></a></nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

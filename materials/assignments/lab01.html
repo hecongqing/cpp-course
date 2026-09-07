@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 1 — Loops and Relational Expressions · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/lab01.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 4 · LAB 1" data-zh="第4周 · 实验1" class="eyebrow">WEEK 4 · LAB 1</p>
+      <h1 data-en="Lab 1 — Loops and Relational Expressions" data-zh="实验1：循环和关系表达式">Lab 1 — Loops and Relational Expressions</h1>
+      <p data-en="Use a for loop to add the integers from 1 to n." data-zh="使用 for 循环计算从 1 到 n 的整数之和。" class="summary">Use a for loop to add the integers from 1 to n.</p>
+    </div>
+    <nav class="section-nav" aria-label="Lab sections">
+      <a href="#objectives"><span data-en="Objectives" data-zh="实验目的">Objectives</span></a><a href="#environment"><span data-en="Environment" data-zh="实验环境">Environment</span></a><a href="#tasks"><span data-en="Tasks" data-zh="实验任务">Tasks</span></a><a href="#submission"><span data-en="Submission" data-zh="提交要求">Submission</span></a>
+    </nav>
+    <section id="objectives"><h2 data-en="I. Objectives" data-zh="一、实验目的">I. Objectives</h2><ul>
+<li data-en="Recognize the initialization, test condition, and update in a for loop." data-zh="识别 for 循环中的初始化、测试条件和更新部分。">Recognize the initialization, test condition, and update in a for loop.</li>
+<li data-en="Use the relational operator &lt;= to control a loop." data-zh="使用关系运算符 &lt;= 控制循环。">Use the relational operator &lt;= to control a loop.</li>
+</ul><h3 data-en="Before the Lab" data-zh="实验前应掌握">Before the Lab</h3><p data-en="Weeks 2–3: initialize int variables, read with std::cin, print with std::cout, and use +=, ++, &lt;=, and a for loop. Trace one loop by hand before filling in the TODO." data-zh="第2—3周：int 变量初始化、std::cin 输入、std::cout 输出，以及 +=、++、&lt;= 和 for 循环。补全 TODO 前，先手工跟踪一次循环。" class="prerequisites">Weeks 2–3: initialize int variables, read with std::cin, print with std::cout, and use +=, ++, &lt;=, and a for loop. Trace one loop by hand before filling in the TODO.</p></section><section id="environment"><h2 data-en="II. Environment" data-zh="二、实验环境">II. Environment</h2><ul>
+<li data-en="A computer with Windows, macOS, or Linux." data-zh="一台安装 Windows、macOS 或 Linux 的计算机。">A computer with Windows, macOS, or Linux.</li>
+<li data-en="Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class." data-zh="使用 OnlineGDB 的 C++ 模式，或课堂演示的 C++ 编程环境。">Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class.</li>
+<li data-en="Save your program as lab01.cpp. Use one source file for this lab." data-zh="将程序保存为 lab01.cpp。本次实验使用一个源文件完成。">Save your program as lab01.cpp. Use one source file for this lab.</li>
+</ul><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a></section><section id="tasks"><h2 data-en="III. Tasks and Requirements" data-zh="三、实验内容和要求">III. Tasks and Requirements</h2><p data-en="Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished." data-zh="补全代码框架中的 TODO，再将运行结果与预期结果比较。代码框架中的练习部分尚未完成。" class="instruction">Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished.</p><article class="task"><h3 data-en="Task 1 — Read and run the for loop" data-zh="任务1：阅读并运行 for 循环">Task 1 — Read and run the for loop</h3><ul>
+<li data-en="Find i = 1, i &lt;= n, and ++i. Run the program and enter 3. The starter displays Sum: 0 because the loop does not yet add i to sum." data-zh="找到 i = 1、i &lt;= n 和 ++i。运行程序并输入 3。框架还没有在循环中将 i 累加到 sum，因此显示 Sum: 0。">Find i = 1, i &lt;= n, and ++i. Run the program and enter 3. The starter displays Sum: 0 because the loop does not yet add i to sum.</li>
+</ul></article><article class="task"><h3 data-en="Task 2 — Complete the loop body" data-zh="任务2：完成循环体">Task 2 — Complete the loop body</h3><ul>
+<li data-en="At TODO 1, add the current value of i to sum. Keep the supplied loop condition and output statement." data-zh="在 TODO 1 处，将 i 的当前值累加到 sum。保留已提供的循环条件和输出语句。">At TODO 1, add the current value of i to sum. Keep the supplied loop condition and output statement.</li>
+</ul></article><article class="task"><h3 data-en="Task 3 — Test the loop limits" data-zh="任务3：测试循环边界">Task 3 — Test the loop limits</h3><ul>
+<li data-en="Use an integer n from 0 to 10. Test 0, 1, 3, and 5; the sums should be 0, 1, 6, and 15. When n is 0, the loop body should not run." data-zh="使用 0 到 10 之间的整数 n。分别测试 0、1、3 和 5，结果应为 0、1、6 和 15。n 为 0 时，循环体应一次也不执行。">Use an integer n from 0 to 10. Test 0, 1, 3, and 5; the sums should be 0, 1, 6, and 15. When n is 0, the loop body should not run.</li>
+</ul></article><div class="code-heading"><h3 data-en="Starter Code" data-zh="代码框架">Starter Code</h3><a href="lab01.cpp" download="lab01.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a></div><pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+
+int main() {
+    int n = 0;
+    std::cin &gt;&gt; n;
+    int sum = 0;
+
+    for (int i = 1; i &lt;= n; ++i) {
+        // TODO 1: Add i to sum.
+    }
+
+    std::cout &lt;&lt; &quot;Sum: &quot; &lt;&lt; sum &lt;&lt; &#x27;\n&#x27;;
+    return 0;
+}
+</code></pre><h3 data-en="Expected Output" data-zh="预期运行结果">Expected Output</h3><p data-en="Expected output for input 3 after completing the loop body." data-zh="补全循环体后，输入 3 时的预期结果。">Expected output for input 3 after completing the loop body.</p><pre class="expected-output"><code>Sum: 6</code></pre></section><section id="submission"><h2 data-en="IV. Submission" data-zh="四、提交要求">IV. Submission</h2><ul>
+<li data-en="Your completed lab01.cpp source file." data-zh="补全后的 lab01.cpp 源文件。">Your completed lab01.cpp source file.</li>
+<li data-en="One or two screenshots showing your test results." data-zh="一至两张能够展示测试结果的运行截图。">One or two screenshots showing your test results.</li>
+<li data-en="A short answer to each question below, in English or Chinese." data-zh="用中文或英文简短回答下面两个问题。">A short answer to each question below, in English or Chinese.</li>
+</ul><h3 data-en="Two Short Questions" data-zh="两个简短问题">Two Short Questions</h3><ol>
+<li data-en="Why does the test condition use &lt;= instead of &lt;?" data-zh="测试条件为什么使用 &lt;=，而不是 &lt;？">Why does the test condition use &lt;= instead of &lt;?</li>
+<li data-en="How many times does the loop body run when n is 0?" data-zh="n 为 0 时，循环体执行多少次？">How many times does the loop body run when n is 0?</li>
+</ol></section>
+    <nav class="lab-nav" aria-label="Lab navigation"><a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a><a href="lab02.html"><span data-en="Next Lab →" data-zh="下一个实验 →">Next Lab →</span></a></nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

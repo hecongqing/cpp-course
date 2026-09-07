@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 2 — Branching Statements and Logical Operators · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/lab02.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 6 · LAB 2" data-zh="第6周 · 实验2" class="eyebrow">WEEK 6 · LAB 2</p>
+      <h1 data-en="Lab 2 — Branching Statements and Logical Operators" data-zh="实验2：分支语句和逻辑运算符">Lab 2 — Branching Statements and Logical Operators</h1>
+      <p data-en="Use an if else statement to decide whether a score is a pass." data-zh="使用 if else 语句判断成绩是否及格。" class="summary">Use an if else statement to decide whether a score is a pass.</p>
+    </div>
+    <nav class="section-nav" aria-label="Lab sections">
+      <a href="#objectives"><span data-en="Objectives" data-zh="实验目的">Objectives</span></a><a href="#environment"><span data-en="Environment" data-zh="实验环境">Environment</span></a><a href="#tasks"><span data-en="Tasks" data-zh="实验任务">Tasks</span></a><a href="#submission"><span data-en="Submission" data-zh="提交要求">Submission</span></a>
+    </nav>
+    <section id="objectives"><h2 data-en="I. Objectives" data-zh="一、实验目的">I. Objectives</h2><ul>
+<li data-en="Use an if else statement to choose between two outputs." data-zh="使用 if else 语句在两种输出之间进行选择。">Use an if else statement to choose between two outputs.</li>
+<li data-en="Write a test condition and check the boundary value." data-zh="编写测试条件，并检查边界值。">Write a test condition and check the boundary value.</li>
+</ul><h3 data-en="Before the Lab" data-zh="实验前应掌握">Before the Lab</h3><p data-en="Week 5: bool values, relational and logical operators, and if else. Read score &gt;= 60 as a condition that is true for a passing score." data-zh="第5周：bool 值、关系和逻辑运算符，以及 if else。能理解 score &gt;= 60 表示成绩及格时为真的条件。" class="prerequisites">Week 5: bool values, relational and logical operators, and if else. Read score &gt;= 60 as a condition that is true for a passing score.</p></section><section id="environment"><h2 data-en="II. Environment" data-zh="二、实验环境">II. Environment</h2><ul>
+<li data-en="A computer with Windows, macOS, or Linux." data-zh="一台安装 Windows、macOS 或 Linux 的计算机。">A computer with Windows, macOS, or Linux.</li>
+<li data-en="Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class." data-zh="使用 OnlineGDB 的 C++ 模式，或课堂演示的 C++ 编程环境。">Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class.</li>
+<li data-en="Save your program as lab02.cpp. Use one source file for this lab." data-zh="将程序保存为 lab02.cpp。本次实验使用一个源文件完成。">Save your program as lab02.cpp. Use one source file for this lab.</li>
+</ul><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a></section><section id="tasks"><h2 data-en="III. Tasks and Requirements" data-zh="三、实验内容和要求">III. Tasks and Requirements</h2><p data-en="Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished." data-zh="补全代码框架中的 TODO，再将运行结果与预期结果比较。代码框架中的练习部分尚未完成。" class="instruction">Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished.</p><article class="task"><h3 data-en="Task 1 — Read the two branches" data-zh="任务1：阅读两个分支">Task 1 — Read the two branches</h3><ul>
+<li data-en="Find the output statements for Pass and Fail. Run the starter with 50 and then 80. Both runs display Fail because false is a placeholder condition." data-zh="找到输出 Pass 和 Fail 的语句。分别输入 50 和 80 运行框架。由于 false 是占位条件，两次都显示 Fail。">Find the output statements for Pass and Fail. Run the starter with 50 and then 80. Both runs display Fail because false is a placeholder condition.</li>
+</ul></article><article class="task"><h3 data-en="Task 2 — Complete the if condition" data-zh="任务2：完成 if 条件">Task 2 — Complete the if condition</h3><ul>
+<li data-en="At TODO 1, replace false with a condition that is true when score is at least 60. Keep the supplied if else structure." data-zh="在 TODO 1 处，将 false 替换为 score 大于或等于 60 时为真的条件。保留已提供的 if else 结构。">At TODO 1, replace false with a condition that is true when score is at least 60. Keep the supplied if else structure.</li>
+</ul></article><article class="task"><h3 data-en="Task 3 — Test both branches and the boundary" data-zh="任务3：测试两个分支和边界">Task 3 — Test both branches and the boundary</h3><ul>
+<li data-en="Use an integer score from 0 to 100. Test 0, 59, 60, and 100. The first two should display Fail; the last two should display Pass." data-zh="使用 0 到 100 之间的整数成绩。分别测试 0、59、60 和 100。前两次应显示 Fail，后两次应显示 Pass。">Use an integer score from 0 to 100. Test 0, 59, 60, and 100. The first two should display Fail; the last two should display Pass.</li>
+</ul></article><div class="code-heading"><h3 data-en="Starter Code" data-zh="代码框架">Starter Code</h3><a href="lab02.cpp" download="lab02.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a></div><pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+
+int main() {
+    int score = 0;
+    std::cin &gt;&gt; score;
+
+    // TODO 1: Replace false with the test condition.
+    if (false) {
+        std::cout &lt;&lt; &quot;Pass&quot; &lt;&lt; &#x27;\n&#x27;;
+    } else {
+        std::cout &lt;&lt; &quot;Fail&quot; &lt;&lt; &#x27;\n&#x27;;
+    }
+    return 0;
+}
+</code></pre><h3 data-en="Expected Output" data-zh="预期运行结果">Expected Output</h3><p data-en="Expected output for input 60 after completing the condition." data-zh="补全条件后，输入 60 时的预期结果。">Expected output for input 60 after completing the condition.</p><pre class="expected-output"><code>Pass</code></pre></section><section id="submission"><h2 data-en="IV. Submission" data-zh="四、提交要求">IV. Submission</h2><ul>
+<li data-en="Your completed lab02.cpp source file." data-zh="补全后的 lab02.cpp 源文件。">Your completed lab02.cpp source file.</li>
+<li data-en="One or two screenshots showing your test results." data-zh="一至两张能够展示测试结果的运行截图。">One or two screenshots showing your test results.</li>
+<li data-en="A short answer to each question below, in English or Chinese." data-zh="用中文或英文简短回答下面两个问题。">A short answer to each question below, in English or Chinese.</li>
+</ul><h3 data-en="Two Short Questions" data-zh="两个简短问题">Two Short Questions</h3><ol>
+<li data-en="Why should a score of 60 use the Pass branch?" data-zh="为什么成绩为 60 时应执行输出 Pass 的分支？">Why should a score of 60 use the Pass branch?</li>
+<li data-en="When does the else branch run?" data-zh="什么时候执行 else 分支？">When does the else branch run?</li>
+</ol></section>
+    <nav class="lab-nav" aria-label="Lab navigation"><a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a><a href="lab01.html"><span data-en="Previous Lab" data-zh="上一个实验">Previous Lab</span></a><a href="lab03.html"><span data-en="Next Lab →" data-zh="下一个实验 →">Next Lab →</span></a></nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

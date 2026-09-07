@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 4 — Objects and Classes · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/lab04.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 10 · LAB 4" data-zh="第10周 · 实验4" class="eyebrow">WEEK 10 · LAB 4</p>
+      <h1 data-en="Lab 4 — Objects and Classes" data-zh="实验4：对象和类">Lab 4 — Objects and Classes</h1>
+      <p data-en="Create two student objects and display their information." data-zh="创建两个学生对象并显示它们的信息。" class="summary">Create two student objects and display their information.</p>
+    </div>
+    <nav class="section-nav" aria-label="Lab sections">
+      <a href="#objectives"><span data-en="Objectives" data-zh="实验目的">Objectives</span></a><a href="#environment"><span data-en="Environment" data-zh="实验环境">Environment</span></a><a href="#tasks"><span data-en="Tasks" data-zh="实验任务">Tasks</span></a><a href="#submission"><span data-en="Submission" data-zh="提交要求">Submission</span></a>
+    </nav>
+    <section id="objectives"><h2 data-en="I. Objectives" data-zh="一、实验目的">I. Objectives</h2><ul>
+<li data-en="Use a class to group a student&#x27;s name and score." data-zh="使用类保存学生的姓名和成绩。">Use a class to group a student&#x27;s name and score.</li>
+<li data-en="Initialize an object with a constructor and call a member function." data-zh="使用构造函数初始化对象，并调用成员函数。">Initialize an object with a constructor and call a member function.</li>
+</ul><h3 data-en="Before the Lab" data-zh="实验前应掌握">Before the Lab</h3><p data-en="Week 9: std::string, public and private members, constructors, and const member functions. A constructor sets up an object; show() const displays its data without changing its data members." data-zh="第9周：std::string、public 和 private 成员、构造函数及 const 成员函数。构造函数完成对象的初始设置；show() const 显示数据而不修改数据成员。" class="prerequisites">Week 9: std::string, public and private members, constructors, and const member functions. A constructor sets up an object; show() const displays its data without changing its data members.</p></section><section id="environment"><h2 data-en="II. Environment" data-zh="二、实验环境">II. Environment</h2><ul>
+<li data-en="A computer with Windows, macOS, or Linux." data-zh="一台安装 Windows、macOS 或 Linux 的计算机。">A computer with Windows, macOS, or Linux.</li>
+<li data-en="Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class." data-zh="使用 OnlineGDB 的 C++ 模式，或课堂演示的 C++ 编程环境。">Use OnlineGDB in C++ mode, or the C++ environment demonstrated in class.</li>
+<li data-en="Save your program as lab04.cpp. Use one source file for this lab." data-zh="将程序保存为 lab04.cpp。本次实验使用一个源文件完成。">Save your program as lab04.cpp. Use one source file for this lab.</li>
+</ul><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a></section><section id="tasks"><h2 data-en="III. Tasks and Requirements" data-zh="三、实验内容和要求">III. Tasks and Requirements</h2><p data-en="Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished." data-zh="补全代码框架中的 TODO，再将运行结果与预期结果比较。代码框架中的练习部分尚未完成。" class="instruction">Complete the TODOs in the starter code, then compare your result with the expected output. The starter is intentionally unfinished.</p><article class="task"><h3 data-en="Task 1 — Read the Student class" data-zh="任务1：阅读 Student 类">Task 1 — Read the Student class</h3><ul>
+<li data-en="Find the private data members name and score. Find the constructor and show(). Run the starter; it will not display student information until the TODOs are completed." data-zh="找到私有数据成员 name、score，以及构造函数和 show()。运行框架；完成 TODO 前，程序不会显示学生信息。">Find the private data members name and score. Find the constructor and show(). Run the starter; it will not display student information until the TODOs are completed.</li>
+</ul></article><article class="task"><h3 data-en="Task 2 — Complete the constructor and show()" data-zh="任务2：完成构造函数和 show()">Task 2 — Complete the constructor and show()</h3><ul>
+<li data-en="At TODO 1, assign studentName to name and studentScore to score. At TODO 2, print the name and score on one line, as shown below." data-zh="在 TODO 1 处，将 studentName 赋给 name，将 studentScore 赋给 score。在 TODO 2 处，按下方示例在一行中输出姓名和成绩。">At TODO 1, assign studentName to name and studentScore to score. At TODO 2, print the name and score on one line, as shown below.</li>
+</ul></article><article class="task"><h3 data-en="Task 3 — Test two independent objects" data-zh="任务3：测试两个独立对象">Task 3 — Test two independent objects</h3><ul>
+<li data-en="Run the program for Alex (85) and Sam (92). Then change only Sam&#x27;s score to 70 and run it again. Alex&#x27;s score should still be 85." data-zh="运行程序，显示 Alex（85 分）和 Sam（92 分）。再只将 Sam 的成绩改为 70 后重新运行，Alex 的成绩应仍为 85。">Run the program for Alex (85) and Sam (92). Then change only Sam&#x27;s score to 70 and run it again. Alex&#x27;s score should still be 85.</li>
+</ul></article><div class="code-heading"><h3 data-en="Starter Code" data-zh="代码框架">Starter Code</h3><a href="lab04.cpp" download="lab04.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a></div><pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Student {
+private:
+    std::string name;
+    int score = 0;
+
+public:
+    Student(std::string studentName, int studentScore) {
+        // TODO 1: Set name and score.
+    }
+
+    void show() const {
+        // TODO 2: Print name and score.
+    }
+};
+
+int main() {
+    Student first(&quot;Alex&quot;, 85);
+    Student second(&quot;Sam&quot;, 92);
+    first.show();
+    second.show();
+    return 0;
+}
+</code></pre><h3 data-en="Expected Output" data-zh="预期运行结果">Expected Output</h3><p data-en="Expected output after completing both TODOs." data-zh="完成两个 TODO 后的预期结果。">Expected output after completing both TODOs.</p><pre class="expected-output"><code>Alex 85
+Sam 92</code></pre></section><section id="submission"><h2 data-en="IV. Submission" data-zh="四、提交要求">IV. Submission</h2><ul>
+<li data-en="Your completed lab04.cpp source file." data-zh="补全后的 lab04.cpp 源文件。">Your completed lab04.cpp source file.</li>
+<li data-en="One or two screenshots showing your test results." data-zh="一至两张能够展示测试结果的运行截图。">One or two screenshots showing your test results.</li>
+<li data-en="A short answer to each question below, in English or Chinese." data-zh="用中文或英文简短回答下面两个问题。">A short answer to each question below, in English or Chinese.</li>
+</ul><h3 data-en="Two Short Questions" data-zh="两个简短问题">Two Short Questions</h3><ol>
+<li data-en="When is the Student constructor called?" data-zh="Student 的构造函数在什么时候被调用？">When is the Student constructor called?</li>
+<li data-en="Why can first and second store different scores?" data-zh="为什么 first 和 second 可以保存不同的成绩？">Why can first and second store different scores?</li>
+</ol></section>
+    <nav class="lab-nav" aria-label="Lab navigation"><a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a><a href="lab03.html"><span data-en="Previous Lab" data-zh="上一个实验">Previous Lab</span></a><a href="lab05.html"><span data-en="Next Lab →" data-zh="下一个实验 →">Next Lab →</span></a></nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

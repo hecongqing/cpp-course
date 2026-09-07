@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -6,40 +6,40 @@ const currentDirectory = dirname(fileURLToPath(import.meta.url));
 const html = readFileSync(join(currentDirectory, "index.html"), "utf8");
 
 const expectedTitles = [
-  "Introduction",
-  "Types",
-  "Input/Output",
-  "Selection & Repetition",
+  "Getting Started with C++",
+  "Dealing with Data",
+  "Loops and Relational Expressions",
+  "Loops and Relational Expressions",
+  "Branching Statements and Logical Operators",
+  "Branching Statements and Logical Operators",
+  "Functions: C++’s Programming Modules",
   "Functions",
-  "Functions",
-  "Containers",
-  "Pointers",
-  "Algorithms",
-  "Classes",
-  "Classes",
-  "Classes",
-  "Streams",
-  "Inheritance",
-  "Building C++ Projects",
+  "Objects and Classes",
+  "Objects and Classes",
+  "Class Inheritance",
+  "Class Inheritance",
+  "Polymorphic Public Inheritance",
+  "Polymorphic Public Inheritance",
+  "Review",
   "Review"
 ];
 
 const expectedChineseTitles = [
-  "简介",
-  "类型",
-  "输入输出",
-  "选择与循环",
+  "C++入门",
+  "处理数据",
+  "循环和关系表达式",
+  "循环和关系表达式",
+  "分支语句和逻辑运算符",
+  "分支语句和逻辑运算符",
+  "函数：C++的编程模块",
   "函数",
-  "函数",
-  "容器",
-  "指针",
-  "算法",
-  "类",
-  "类",
-  "类",
-  "流",
-  "继承",
-  "C++项目构建",
+  "对象和类",
+  "对象和类",
+  "类继承",
+  "类继承",
+  "多态公有继承",
+  "多态公有继承",
+  "复习",
   "复习"
 ];
 
@@ -52,27 +52,75 @@ const expectedHeaders = [
 ];
 
 const expectedModes = [
-  ["Mixed", "混合"],
-  ["Theory", "理论"],
-  ["Lab 1", "实践一"],
-  ["Mixed", "混合"],
-  ["Theory", "理论"],
-  ["Lab 2", "实践二"],
-  ["Mixed", "混合"],
-  ["Theory", "理论"],
-  ["Lab 3", "实践三"],
-  ["Theory", "理论"],
-  ["Theory", "理论"],
-  ["Lab 4", "实践四"],
-  ["Theory", "理论"],
-  ["Mixed", "混合"],
-  ["Lab 5", "实践五"],
-  ["Lab 6", "实践六"]
+  [
+    "Theory 1",
+    "理论周 1"
+  ],
+  [
+    "Theory 2",
+    "理论周 2"
+  ],
+  [
+    "Theory 3",
+    "理论周 3"
+  ],
+  [
+    "Lab 1",
+    "实验周 1"
+  ],
+  [
+    "Theory 4",
+    "理论周 4"
+  ],
+  [
+    "Lab 2",
+    "实验周 2"
+  ],
+  [
+    "Theory 5",
+    "理论周 5"
+  ],
+  [
+    "Lab 3",
+    "实验周 3"
+  ],
+  [
+    "Theory 6",
+    "理论周 6"
+  ],
+  [
+    "Lab 4",
+    "实验周 4"
+  ],
+  [
+    "Theory 7",
+    "理论周 7"
+  ],
+  [
+    "Lab 5",
+    "实验周 5"
+  ],
+  [
+    "Theory 8",
+    "理论周 8"
+  ],
+  [
+    "Lab 6",
+    "实验周 6"
+  ],
+  [
+    "Review",
+    "复习周"
+  ],
+  [
+    "Review",
+    "复习周"
+  ]
 ];
 
 const scheduleSection = html.match(/<section id="schedule"[\s\S]*?<\/section>/)?.[0] ?? "";
 const topicPairs = [...scheduleSection.matchAll(/<td data-label="Topic" data-label-en="Topic" data-label-zh="题目">\s*<strong data-en="([^"]+)" data-zh="([^"]+)"/g)].map((match) => [match[1], match[2]]);
-const actualTitles = topicPairs.map(([english]) => english);
+const actualTitles = topicPairs.map(([english]) => english.replaceAll("&amp;", "&"));
 const actualChineseTitles = topicPairs.map(([, chinese]) => chinese);
 const actualHeaders = [...scheduleSection.matchAll(/<th scope="col" data-en="([^"]+)" data-zh="([^"]+)"/g)].map((match) => [match[1], match[2]]);
 const actualModes = [...scheduleSection.matchAll(/<span class="mode-badge [^"]+" data-en="([^"]+)" data-zh="([^"]+)"/g)].map((match) => [match[1], match[2]]);
@@ -80,7 +128,7 @@ const topicCells = [...scheduleSection.matchAll(/<td data-label="Topic" data-lab
 const materialsCells = [...scheduleSection.matchAll(/<td data-label="Materials" data-label-en="Materials" data-label-zh="材料">([\s\S]*?)<\/td>/g)].map((match) => match[1]);
 const materialPlaceholderLinks = [...scheduleSection.matchAll(/<a href="materials\/assignments\/mock\.html\?week=(\d{2})&amp;kind=(slides|code)"/g)].map((match) => [match[1], match[2]]);
 const assignmentCells = [...scheduleSection.matchAll(/<td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">([\s\S]*?)<\/td>/g)].map((match) => match[1]);
-const assignmentDocumentLinks = [...scheduleSection.matchAll(/<a class="assignment-document" href="materials\/assignments\/mock\.html\?week=(\d{2})"/g)].map((match) => match[1]);
+const assignmentDocumentLinks = [...scheduleSection.matchAll(/<a class="assignment-document" href="([^"]+)"/g)].map((match) => match[1]);
 const assignmentLabels = [...scheduleSection.matchAll(/<span data-en="Assignment" data-zh="作业">Assignment<\/span>/g)];
 
 const forbiddenTitleVariants = [
@@ -148,8 +196,8 @@ if (/class="legend"|Mixed · 1\.5 \+ 1\.5|混合周 · 1\.5 \+ 1\.5/.test(schedu
   failures.push("The removed Theory / Mixed / Lab schedule legend remains on the page.");
 }
 
-if (!/Theory weeks use a short exit check; mixed weeks include an in-class coding task; lab weeks require a submission\./.test(scheduleSection)) {
-  failures.push("The schedule does not explain the current weekly-task policy.");
+if (!/Theory weeks use a short exit check; lab assignments include instructions, starter code, and submission requirements\./.test(scheduleSection)) {
+  failures.push("The schedule does not explain the current class-task policy.");
 }
 
 if (/Course Content|教学内容/.test(scheduleSection)) {
@@ -197,8 +245,40 @@ if (/class="assignment-title"|In class — Build and run/.test(scheduleSection))
   failures.push("Assignments cells must contain document links only, without the removed task-description line.");
 }
 
-if (JSON.stringify(assignmentDocumentLinks) !== JSON.stringify(Array.from({ length: 16 }, (_, index) => String(index + 1).padStart(2, "0")))) {
-  failures.push("Assignment mock links must map in order from Week 01 through Week 16.");
+const labWeeks = [4, 6, 8, 10, 12, 14];
+const expectedAssignments = Array.from({ length: 16 }, (_, index) => {
+  const week = index + 1;
+  const labIndex = labWeeks.indexOf(week);
+  return labIndex < 0
+    ? `materials/assignments/mock.html?week=${String(week).padStart(2, "0")}`
+    : `materials/assignments/lab${String(labIndex + 1).padStart(2, "0")}.html`;
+});
+if (JSON.stringify(assignmentDocumentLinks) !== JSON.stringify(expectedAssignments)) {
+  failures.push("Lab weeks 4, 6, 8, 10, 12, and 14 must link to their own assignment pages.");
+}
+for (let index = 0; index < labWeeks.length; index++) {
+  const filename = `lab${String(index + 1).padStart(2, "0")}`;
+  const pagePath = join(currentDirectory, "materials/assignments", filename + ".html");
+  if (!existsSync(pagePath)) {
+    failures.push(`Missing lab page: ${filename}`);
+    continue;
+  }
+  const page = readFileSync(pagePath, "utf8");
+  const titleEn = `Lab ${index + 1} — ${expectedTitles[labWeeks[index] - 1]}`;
+  const titleZh = `实验${index + 1}：${expectedChineseTitles[labWeeks[index] - 1]}`;
+  if (!page.includes(`data-en="${titleEn}" data-zh="${titleZh}"`)) {
+    failures.push(`${filename}: lab title must match the textbook terminology in the schedule`);
+  }
+  for (const id of ["objectives", "environment", "tasks", "submission"]) {
+    if (!page.includes(`id="${id}"`)) failures.push(`${filename}: missing ${id} section`);
+  }
+  if (!page.includes(`WEEK ${labWeeks[index]} · LAB ${index + 1}`) || !page.includes(`第${labWeeks[index]}周 · 实验${index + 1}`)) {
+    failures.push(`${filename}: incorrect bilingual lab week`);
+  }
+  if (!page.includes('data-lang-option="en"') || !page.includes('data-lang-option="zh"')) failures.push(`${filename}: missing language switch`);
+  const starterPath = join(currentDirectory, "materials/assignments", filename + ".cpp");
+  if (!existsSync(starterPath)) failures.push(`${filename}: missing starter code`);
+  if ((page.match(/class="task"/g) || []).length !== 3) failures.push(`${filename}: expected three guided tasks`);
 }
 
 if (/Topic & Materials|Weekly Output|Modules to Complete|Materials and Assignments/.test(scheduleSection)) {
@@ -262,9 +342,21 @@ for (const pattern of forbiddenTitleVariants) {
   }
 }
 
+const teachingPages = [html, ...labWeeks.map((_, index) => readFileSync(join(currentDirectory, "materials/assignments", `lab${String(index + 1).padStart(2, "0")}.html`), "utf8"))];
+for (const [index, page] of teachingPages.entries()) {
+  if (/selection|repetition|object composition|classes and objects|static members|classes with object members|static class members|选择与循环|对象组合|包含对象成员|静态类成员/i.test(page)) {
+    failures.push(`Teaching page ${index}: terminology from the previous course outline remains`);
+  }
+}
+if (!html.includes("C++ Primer Plus, 6th Edition")) failures.push("Missing English textbook reference");
+if (!teachingPages[3].includes("formal arguments") || !teachingPages[3].includes("actual arguments")) failures.push("Lab 3 must distinguish formal and actual arguments");
+
+if (!html.includes('8 Theory · 6 Labs · 2 Review') || !html.includes('8个理论周 · 6个实验周 · 2个复习周')) failures.push("Course totals must show 8 theory, 6 lab, and 2 review weeks");
+if (actualModes.filter(([mode]) => mode.startsWith("Theory")).length !== 8 || actualModes.filter(([mode]) => mode.startsWith("Lab")).length !== 6 || actualModes.slice(14).some(([mode]) => mode !== "Review")) failures.push("Expected 8 theory weeks, 6 lab weeks, and Review in weeks 15–16");
+
 if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
 
-console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=5; modes=${actualModes.length}; theory=6, mixed=4, lab=6; hours=24+24.`);
+console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=5; modes=${actualModes.length}; theory=8, lab=6, review=2; bilingual lab assignments=6.`);
