@@ -47,6 +47,7 @@ const expectedHeaders = [
   ["Week", "周次"],
   ["Mode", "类型"],
   ["Topic", "题目"],
+  ["Materials", "材料"],
   ["Assignments", "作业"]
 ];
 
@@ -201,9 +202,13 @@ if (/Course Content|教学内容/.test(scheduleSection)) {
   failures.push("The removed Course Content column remains in the schedule.");
 }
 
-if (/data-label="Materials"|data-en="Slides"|data-en="Code"|kind=(slides|code)/.test(scheduleSection)) {
-  failures.push("The schedule must not contain the removed Materials column or Slides/Code links.");
+if (/data-en="Code"|kind=code/.test(scheduleSection)) {
+  failures.push("The removed Code links must not appear in the schedule.");
 }
+const slideLinks = [...scheduleSection.matchAll(/<div class="lecture-links"><a href="([^"]+)"/g)].map(m => m[1]);
+const expectedSlideLinks = Array.from({length: 16}, (_, i) => i === 0 ? "materials/slides/week1_v4.pdf" : `materials/assignments/mock.html?week=${String(i + 1).padStart(2, "0")}&amp;kind=slides`);
+if (JSON.stringify(slideLinks) !== JSON.stringify(expectedSlideLinks)) failures.push("Slides links must include the Week 1 PDF and placeholders for the remaining weeks.");
+if (!existsSync(join(currentDirectory, "materials/slides/week1_v4.pdf"))) failures.push("The Week 1 PDF is missing.");
 
 if (topicCells.length !== 16 || topicCells.some((cell) => /class="lecture-links"/.test(cell))) {
   failures.push("Topic cells must contain only the weekly topic.");
@@ -341,4 +346,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=4; modes=${actualModes.length}; theory=8, lab=6, review=2; bilingual lab assignments=6.`);
+console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=5; modes=${actualModes.length}; theory=8, lab=6, review=2; bilingual lab assignments=6.`);

@@ -2,7 +2,7 @@
 
 课程按周安排，共16周，包括8个理论周、6个实验周和2个复习周。第15、16周统一为Review / 复习。实验周为第4、6、8、10、12、14周，各自的Assignment链接打开独立的中英文实验指导页。页面默认英文，可切换中文。
 
-课表四列为 `Week / 周次`、`Mode / 类型`、`Topic / 题目`、`Assignments / 作业`。Theory 1–8与Lab 1–6分别是理论周与实验周的序号；第一列表示实际教学周次。
+课表五列为 `Week / 周次`、`Mode / 类型`、`Topic / 题目`、`Materials / 材料`、`Assignments / 作业`。Theory 1–8与Lab 1–6分别是理论周与实验周的序号；第一列表示实际教学周次。
 
 | Week | Mode | Topic | 中文主题 |
 |---:|---|---|---|
@@ -88,6 +88,6 @@
 
 实验页面与下载代码由项目目录的 `tools/build_lab_assignments.py` 生成；本地验证用的完整示例保存在output目录，不发布到网站。页面样式与语言切换分别为 `materials/assignments/labs.css` 和 `labs.js`。
 
-第一周Assignment为Your First OnlineGDB Program，依据week1_v4.pdf第37页；其他尚未提供内容的理论周与复习周Assignment继续使用Coming soon占位页。课表已移除Materials列及Slides、Code入口。实验的可下载代码框架在对应Assignment页面中。旧week与session参数的占位链接继续可访问。
+第一周Assignment为Your First OnlineGDB Program，依据week1_v4.pdf第37页；其他尚未提供内容的理论周与复习周Assignment继续使用Coming soon占位页。课表保留Materials列和Slides入口，仅移除Code入口。第一周Slides直接打开materials/slides/week1_v4.pdf，其余周Slides暂使用占位页。实验的可下载代码框架在对应Assignment页面中。旧week与session参数的占位链接继续可访问。
 
 运行 `node terminology-audit.mjs` 核对课表、中英文标题、实验周链接与页面结构。课程技术术语以本文件指定的英文教材为准，标准库标识符和C++关键字保留原样。

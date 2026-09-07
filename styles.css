@@ -399,7 +399,7 @@ h3 {
 
 .schedule-table {
   width: 100%;
-  min-width: 580px;
+  min-width: 680px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -442,7 +442,11 @@ h3 {
 }
 
 .schedule-table th:nth-child(4) {
-  width: 150px;
+  width: 110px;
+}
+
+.schedule-table th:nth-child(5) {
+  width: 140px;
 }
 
 .schedule-table td {
@@ -474,7 +478,7 @@ h3 {
   margin-top: 0;
 }
 
-.schedule-table td:nth-child(4) {
+.schedule-table td:nth-child(5) {
   color: #383838;
 }
 

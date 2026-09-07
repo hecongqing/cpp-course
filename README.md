@@ -12,7 +12,7 @@
 - 页面右上角提供 `EN / 中文` 即时切换；
 - 首页采用CS106L风格展示教师姓名、邮箱、上课星期和教室；
 - 完整呈现16个教学周的安排：8个理论周、6个实验周、2个复习周；
-- 课程表采用 `Week / Mode / Topic / Assignments` 四列结构；
+- 课程表采用 `Week / Mode / Topic / Materials / Assignments` 五列结构；
 - 采用 Theory 1–8 / 理论周 1–8 与 Lab 1–6 / 实验周 1–6 编号；
 - 以独立的 `Assignments / 作业` 列提供简洁的作业文档入口；
 - 每周的作业项包含 `Assignment / 作业`文档入口；正式文件未发布时，文档页显示 `Coming soon...`；
@@ -37,6 +37,6 @@
 
 第1周 Assignment 链接打开 `materials/assignments/week01.html`：Your First OnlineGDB Program / 你的第一个 OnlineGDB 程序，依据本地 `hnu_c++/week1_v4.pdf` 第37页及教师提供的课堂说明。学生修改三条输出语句中的姓名、专业和学习目标，预测输出、运行检查，再修改目标并测试；页面保留原题四条完成标准，支持中英文切换和下载代码框架。
 
-课程表已删除 Materials 列及所有 Slides、Code 入口。保留 Week、Mode、Topic、Assignments 四列。原资源占位页仍可通过已有地址访问。
+课程表保留 Materials 列及 Slides 入口，Code 入口已删除。第一周 Slides 打开 `materials/slides/week1_v4.pdf`，与教师提供的原文件完全一致；其他周的 Slides 暂进入占位页。第一周 Assignment 继续打开独立的中英文作业页。
 
 第一周作业由 `tools/build_week1_assignment.py` 生成，六次实验及课表由 `tools/build_lab_assignments.py` 维护；更新时运行相应生成器，再运行术语检查。
