@@ -47,7 +47,6 @@ const expectedHeaders = [
   ["Week", "周次"],
   ["Mode", "类型"],
   ["Topic", "题目"],
-  ["Materials", "材料"],
   ["Assignments", "作业"]
 ];
 
@@ -125,8 +124,6 @@ const actualChineseTitles = topicPairs.map(([, chinese]) => chinese);
 const actualHeaders = [...scheduleSection.matchAll(/<th scope="col" data-en="([^"]+)" data-zh="([^"]+)"/g)].map((match) => [match[1], match[2]]);
 const actualModes = [...scheduleSection.matchAll(/<span class="mode-badge [^"]+" data-en="([^"]+)" data-zh="([^"]+)"/g)].map((match) => [match[1], match[2]]);
 const topicCells = [...scheduleSection.matchAll(/<td data-label="Topic" data-label-en="Topic" data-label-zh="题目">([\s\S]*?)<\/td>/g)].map((match) => match[1]);
-const materialsCells = [...scheduleSection.matchAll(/<td data-label="Materials" data-label-en="Materials" data-label-zh="材料">([\s\S]*?)<\/td>/g)].map((match) => match[1]);
-const materialPlaceholderLinks = [...scheduleSection.matchAll(/<a href="materials\/assignments\/mock\.html\?week=(\d{2})&amp;kind=(slides|code)"/g)].map((match) => [match[1], match[2]]);
 const assignmentCells = [...scheduleSection.matchAll(/<td data-label="Assignments" data-label-en="Assignments" data-label-zh="作业">([\s\S]*?)<\/td>/g)].map((match) => match[1]);
 const assignmentDocumentLinks = [...scheduleSection.matchAll(/<a class="assignment-document" href="([^"]+)"/g)].map((match) => match[1]);
 const assignmentLabels = [...scheduleSection.matchAll(/<span data-en="Assignment" data-zh="作业">Assignment<\/span>/g)];
@@ -204,33 +201,12 @@ if (/Course Content|教学内容/.test(scheduleSection)) {
   failures.push("The removed Course Content column remains in the schedule.");
 }
 
-if (materialsCells.length !== 16 || materialsCells.some((cell) => !/class="lecture-links"/.test(cell))) {
-  failures.push("Each week must have a separate Materials cell containing its Slides and/or Code links.");
-}
-
-if (materialsCells.some((cell) => !/kind=slides/.test(cell) || !/kind=code/.test(cell))) {
-  failures.push("Each Materials cell must provide both Slides and Code placeholder links.");
-}
-
-const expectedMaterialLinks = Array.from({ length: 16 }, (_, index) => {
-  const week = String(index + 1).padStart(2, "0");
-  return [[week, "slides"], [week, "code"]];
-}).flat();
-
-if (JSON.stringify(materialPlaceholderLinks) !== JSON.stringify(expectedMaterialLinks)) {
-  failures.push("Material placeholder links must map Slides and Code in order from Week 01 through Week 16.");
-}
-
-if (/class="material-pending"|Coming soon\.\.\.|will coming soon/i.test(scheduleSection)) {
-  failures.push("The schedule must show clean Slides and Code links; Coming soon belongs on the destination page.");
-}
-
-if (/href="materials\/(slides|code)\//.test(scheduleSection)) {
-  failures.push("The schedule still links to the removed third-party slides or code.");
+if (/data-label="Materials"|data-en="Slides"|data-en="Code"|kind=(slides|code)/.test(scheduleSection)) {
+  failures.push("The schedule must not contain the removed Materials column or Slides/Code links.");
 }
 
 if (topicCells.length !== 16 || topicCells.some((cell) => /class="lecture-links"/.test(cell))) {
-  failures.push("Topic cells must contain only the weekly topic, with resource links moved to Materials.");
+  failures.push("Topic cells must contain only the weekly topic.");
 }
 
 if (assignmentCells.length !== 16 || assignmentDocumentLinks.length !== 16) {
@@ -248,6 +224,7 @@ if (/class="assignment-title"|In class — Build and run/.test(scheduleSection))
 const labWeeks = [4, 6, 8, 10, 12, 14];
 const expectedAssignments = Array.from({ length: 16 }, (_, index) => {
   const week = index + 1;
+  if (week === 1) return "materials/assignments/week01.html";
   const labIndex = labWeeks.indexOf(week);
   return labIndex < 0
     ? `materials/assignments/mock.html?week=${String(week).padStart(2, "0")}`
@@ -280,6 +257,11 @@ for (let index = 0; index < labWeeks.length; index++) {
   if (!existsSync(starterPath)) failures.push(`${filename}: missing starter code`);
   if ((page.match(/class="task"/g) || []).length !== 3) failures.push(`${filename}: expected three guided tasks`);
 }
+
+const week1 = readFileSync(join(currentDirectory, "materials/assignments/week01.html"), "utf8");
+if (!week1.includes('data-en="Your First OnlineGDB Program" data-zh="你的第一个 OnlineGDB 程序"') || !week1.includes('WEEK 1 · ASSIGNMENT')) failures.push("Week 1 must show the bilingual OnlineGDB assignment.");
+if (!existsSync(join(currentDirectory, "materials/assignments/week01.cpp"))) failures.push("Week 1 starter code is missing.");
+if (!week1.includes('Your own name appears.') || !week1.includes('The output matches your plan.')) failures.push("Week 1 completion criteria are missing.");
 
 if (/Topic & Materials|Weekly Output|Modules to Complete|Materials and Assignments/.test(scheduleSection)) {
   failures.push("Old schedule-column wording remains in the schedule section.");
@@ -359,4 +341,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=5; modes=${actualModes.length}; theory=8, lab=6, review=2; bilingual lab assignments=6.`);
+console.log(`Terminology audit passed: ${actualTitles.length} weeks; columns=4; modes=${actualModes.length}; theory=8, lab=6, review=2; bilingual lab assignments=6.`);

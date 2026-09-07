@@ -12,14 +12,11 @@
 - 页面右上角提供 `EN / 中文` 即时切换；
 - 首页采用CS106L风格展示教师姓名、邮箱、上课星期和教室；
 - 完整呈现16个教学周的安排：8个理论周、6个实验周、2个复习周；
-- 课程表采用 `Week / Mode / Topic / Materials / Assignments` 五列结构；
+- 课程表采用 `Week / Mode / Topic / Assignments` 四列结构；
 - 采用 Theory 1–8 / 理论周 1–8 与 Lab 1–6 / 实验周 1–6 编号；
 - 以独立的 `Assignments / 作业` 列提供简洁的作业文档入口；
 - 每周的作业项包含 `Assignment / 作业`文档入口；正式文件未发布时，文档页显示 `Coming soon...`；
-- 以独立的 `Materials / 材料` 列提供可直接打开的 `Slides` 和/或 `Code` 课程资源；
 - 学习资源区提供 OnlineGDB 在线C++编译、运行与调试入口；
-- `Slides`或`Code`尚未上传时仍显示为简洁链接，点击后进入 `Coming soon...` 页面；
-- 当前课程表中的第三方课件与代码已移除，16周的材料链接暂统一进入占位页面；
 - 理论周和实验周使用不同标识；
 - 桌面端、平板和手机自适应；
 - 不依赖外部字体、框架或网络资源。
@@ -35,3 +32,11 @@
 ## 基础知识衔接
 
 第2周新增 Dealing with Data / 处理数据，集中讲变量、初始化、基本类型、const、输入输出和基本运算。课程表下方的“Weekly Learning Notes / 每周学习要点”可展开查看各理论周的范围与课堂检查；六份实验的“Before the Lab / 实验前应掌握”与之对应。第3周补充一维数组，第7周补充引用与局部作用域，第9周补充字符串、对象初始化及析构函数，第11周巩固基类初始化，第13周通过基类引用理解虚函数。实验仍为三个简单任务，不增加额外实验周。
+
+## 第一周作业
+
+第1周 Assignment 链接打开 `materials/assignments/week01.html`：Your First OnlineGDB Program / 你的第一个 OnlineGDB 程序，依据本地 `hnu_c++/week1_v4.pdf` 第37页及教师提供的课堂说明。学生修改三条输出语句中的姓名、专业和学习目标，预测输出、运行检查，再修改目标并测试；页面保留原题四条完成标准，支持中英文切换和下载代码框架。
+
+课程表已删除 Materials 列及所有 Slides、Code 入口。保留 Week、Mode、Topic、Assignments 四列。原资源占位页仍可通过已有地址访问。
+
+第一周作业由 `tools/build_week1_assignment.py` 生成，六次实验及课表由 `tools/build_lab_assignments.py` 维护；更新时运行相应生成器，再运行术语检查。

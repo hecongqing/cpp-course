@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your First OnlineGDB Program · C++ Programming</title>
+  <link rel="canonical" href="https://hecongqing.github.io/cpp-course/materials/assignments/week01.html">
+  <link rel="stylesheet" href="labs.css?v=20260907-1">
+  <script src="labs.js?v=20260907-2" defer></script>
+</head>
+<body data-page-type="assignment">
+  <a class="skip-link" href="#main-content"><span data-en="Skip to content" data-zh="跳到主要内容">Skip to content</span></a>
+  <header class="lab-header">
+    <a class="course-home" href="../../index.html#schedule">C++ Programming</a>
+    <div class="language-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <div class="lab-title">
+      <p data-en="WEEK 1 · ASSIGNMENT" data-zh="第1周 · 作业" class="eyebrow">WEEK 1 · ASSIGNMENT</p>
+      <h1 data-en="Your First OnlineGDB Program" data-zh="你的第一个 OnlineGDB 程序">Your First OnlineGDB Program</h1>
+      <p data-en="Write a short C++ program about yourself. Run it, change it, and test it." data-zh="编写一个简短的 C++ 程序介绍自己，运行、修改并测试它。" class="summary">Write a short C++ program about yourself. Run it, change it, and test it.</p>
+    </div>
+    <nav class="section-nav" aria-label="Assignment sections">
+      <a href="#task"><span data-en="Your Task" data-zh="作业内容">Your Task</span></a>
+      <a href="#starter"><span data-en="Starter Code" data-zh="代码框架">Starter Code</span></a>
+      <a href="#done"><span data-en="Done When…" data-zh="完成标准">Done When…</span></a>
+    </nav>
+    <section id="task">
+      <h2 data-en="Your Task" data-zh="作业内容">Your Task</h2>
+      <a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener"><span data-en="Open OnlineGDB ↗" data-zh="打开 OnlineGDB ↗">Open OnlineGDB ↗</span></a>
+      <ol>
+<li data-en="Open OnlineGDB, select C++, and type or paste the complete starter code into the editor." data-zh="打开 OnlineGDB，选择 C++，将完整代码框架输入或粘贴到编辑器中。">Open OnlineGDB, select C++, and type or paste the complete starter code into the editor.</li>
+<li data-en="Replace the three blanks with your name, your field of study, and one thing you want to learn. Keep the quotation marks and \n at the end of each message." data-zh="将三处空白替换为你的姓名、所学专业和一项想学习的内容。保留引号和每条信息末尾的 \n。">Replace the three blanks with your name, your field of study, and one thing you want to learn. Keep the quotation marks and \n at the end of each message.</li>
+<li data-en="Before clicking Run, predict the three lines of output. Then run the program and compare the result with your prediction." data-zh="点击 Run 前，先预测程序会输出哪三行文字。然后运行程序，将结果与你的预测比较。">Before clicking Run, predict the three lines of output. Then run the program and compare the result with your prediction.</li>
+<li data-en="If you see an error, read the first message. Check quotation marks, semicolons, and braces, then run the program again." data-zh="如果出现错误，先阅读第一条错误信息，检查引号、分号和花括号，再次运行程序。">If you see an error, read the first message. Check quotation marks, semicolons, and braces, then run the program again.</li>
+<li data-en="Once the program works, change your learning goal. Predict the new output, then run it again to check your change." data-zh="程序运行正确后，修改你想学习的内容。先预测新输出，再次运行并检查修改结果。">Once the program works, change your learning goal. Predict the new output, then run it again to check your change.</li>
+</ol>
+    </section>
+    <section id="starter">
+      <div class="code-heading">
+        <h2 data-en="Starter Code" data-zh="代码框架">Starter Code</h2>
+        <a href="week01.cpp" download="week01.cpp"><span data-en="Download .cpp" data-zh="下载 .cpp 文件">Download .cpp</span></a>
+      </div>
+      <pre class="source-code" tabindex="0" aria-label="C++ starter code"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; &quot;Hello, my name is _____.\n&quot;;
+    std::cout &lt;&lt; &quot;I study _____.\n&quot;;
+    std::cout &lt;&lt; &quot;I want to learn _____.\n&quot;;
+    return 0;
+}
+</code></pre>
+      <h3 data-en="Example Output" data-zh="示例输出">Example Output</h3>
+      <p data-en="This is an example. Use your own information in your program." data-zh="下方仅为示例，请在程序中使用你自己的信息。">This is an example. Use your own information in your program.</p>
+      <pre class="expected-output"><code>Hello, my name is Alex.
+I study Computer Science.
+I want to learn C++.</code></pre>
+    </section>
+    <section id="done">
+      <h2 data-en="Done When…" data-zh="完成标准">Done When…</h2>
+      <ul>
+<li data-en="Your own name appears." data-zh="输出中出现你自己的姓名。">Your own name appears.</li>
+<li data-en="Each line is readable." data-zh="每行文字清晰可读。">Each line is readable.</li>
+<li data-en="The program compiles." data-zh="程序能够成功编译。">The program compiles.</li>
+<li data-en="The output matches your plan." data-zh="输出结果与你的预期一致。">The output matches your plan.</li>
+</ul>
+      <h3 data-en="Show and Explain" data-zh="展示与说明">Show and Explain</h3>
+      <p data-en="Show your program and its output to a partner. Explain one output statement, what you changed, and how you checked that the change worked." data-zh="向同学展示你的程序和运行结果。解释一条输出语句、你修改了什么，以及如何检查修改是否生效。">Show your program and its output to a partner. Explain one output statement, what you changed, and how you checked that the change worked.</p>
+    </section>
+    <nav class="lab-nav" aria-label="Assignment navigation">
+      <a href="../../index.html#schedule"><span data-en="← Back to Schedule" data-zh="← 返回课程安排">← Back to Schedule</span></a>
+    </nav>
+  </main>
+  <footer>C++ Programming</footer>
+</body>
+</html>

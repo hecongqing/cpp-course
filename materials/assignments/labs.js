@@ -1,5 +1,6 @@
 (() => {
   const buttons = document.querySelectorAll("[data-lang-option]");
+  const isAssignment = document.body.dataset.pageType === "assignment";
   function setLanguage(language) {
     const lang = language === "zh" ? "zh" : "en";
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -11,8 +12,8 @@
     });
     document.title = `${document.querySelector("h1").textContent} · ${lang === "zh" ? "C++程序设计" : "C++ Programming"}`;
     document.querySelector(".language-switch").setAttribute("aria-label", lang === "zh" ? "语言切换" : "Language switch");
-    document.querySelector(".section-nav").setAttribute("aria-label", lang === "zh" ? "实验目录" : "Lab sections");
-    document.querySelector(".lab-nav").setAttribute("aria-label", lang === "zh" ? "实验导航" : "Lab navigation");
+    document.querySelector(".section-nav").setAttribute("aria-label", isAssignment ? (lang === "zh" ? "作业目录" : "Assignment sections") : (lang === "zh" ? "实验目录" : "Lab sections"));
+    document.querySelector(".lab-nav").setAttribute("aria-label", isAssignment ? (lang === "zh" ? "作业导航" : "Assignment navigation") : (lang === "zh" ? "实验导航" : "Lab navigation"));
     document.querySelector(".source-code").setAttribute("aria-label", lang === "zh" ? "C++代码框架" : "C++ starter code");
     document.querySelectorAll('.lab-nav a[href^="lab"]').forEach((link) => {
       const url = new URL(link.href);
